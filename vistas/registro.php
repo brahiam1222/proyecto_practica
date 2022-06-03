@@ -12,7 +12,7 @@
      require_once "../modelo/conexion.php";
 
      $conexion = Conexion::conectar();
-     
+     echo '<pre>'; var_dump($conexion); echo '</pre>';
     ?>
     <title>Signin</title>
 

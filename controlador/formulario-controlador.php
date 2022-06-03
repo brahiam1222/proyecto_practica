@@ -5,8 +5,12 @@
                 
                 if (isset($_POST["registroEmail"])) {
                     
-                    return "ok";
+                    $tabla = "usuario";
+                    $datos = array("email"=>$_POST["registroEmail"],
+                                   "password"=>$_POST["registroContraseña"]);
                     
+                    $respuesta = ModeloFormulario::mdlRegistro($tabla, $datos);
+                    return $respuesta;
                 }
 
 
