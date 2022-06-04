@@ -28,6 +28,21 @@
 
         }
 
+        static public function mdlLogin($tabla,$columna, $datos){
+
+            $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $columna = :$columna");
+            
+            $stmt->bindParam(":".$columna, $datos, PDO::PARAM_STR);
+
+            $stmt->execute();
+
+            return $stmt->fetch();
+
+            // $stmt->close();
+            $stmt = null;
+
+        }
+
 
 
 

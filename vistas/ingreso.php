@@ -89,11 +89,11 @@
     <h1 class="h3 mb-3 fw-normal">Digite su cuenta</h1>
 
     <div class="form-floating">
-      <input type="email" name="registroEmail" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <input type="email" name="loginEmail" class="form-control" id="floatingInput" placeholder="name@example.com">
       <label for="floatingInput">Email</label>
     </div>
     <div class="form-floating">
-      <input type="password" name="registroContraseña" class="form-control" id="floatingPassword" placeholder="Password">
+      <input type="password" name="loginContraseña" class="form-control" id="floatingPassword" placeholder="Password">
       <label for="floatingPassword">Contraseña</label>
     </div>
 
@@ -102,23 +102,47 @@
         <input type="checkbox" value="remember-me"> Recordar cuenta
       </label>
     </div>
+    
       <?php 
 
-        $registro = ControladorFormulario::ctrRegistro();
-        if ($registro == "ok") {
-          
-          echo '<script>
-                if (window.history.replaceState) {
-                    window.history.replaceState(null, null, window.location.href);
-                }
-          </script>';
 
-          echo  "<div class='alert alert-success'>
-                  <strong>¡Registro exitoso!</strong> Ya puedes ingresar.
-                </div>";
-        }
+        // $verif=$_POST['loginEmail'];
+        // $verif2=$_POST['loginContraseña'];
+        // echo $verif;
+        // echo $verif2;
+        $ingreso =  new ControladorFormulario();
+        $ingreso -> ctrLogin();
         
-      
+
+
+        
+        //comparar contraseña
+      //   if($ingreso!=null){
+
+      //     if ($ingreso["email"] == $_POST["loginEmail"] && $ingreso["password"] == $_POST["loginContraseña"]) {
+      //       $valid = true;
+      //         if ($valid==true) {
+      //           echo '<script>
+      //           window.location = "../index.php?pagina=inicio";
+      //           </script>';
+      //           session_start();
+      //         }
+              
+      //       // echo '<script>
+      //       // window.location = "../index.php";
+      //       // </script>';
+      //   }
+      //   else{
+          
+      //     echo '<div class="alert alert-danger">Error al ingresar</div>';
+      //     // alerta
+          
+          
+          
+      //   }
+      // }
+        
+          
       ?>
 
 

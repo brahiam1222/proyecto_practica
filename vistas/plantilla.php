@@ -1,3 +1,8 @@
+
+<?php 
+  session_start();
+  ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,7 +51,7 @@
             <li><a class="dropdown-item" href="#">Settings</a></li>
             <li><a class="dropdown-item" href="#">Profile</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Sign out</a></li>
+            <li><a class="dropdown-item" href="index.php?pagina=salir">Sign out</a></li>
           </ul>
         </div>
       </div>
@@ -58,8 +63,9 @@
     <div class="container">
         <?php 
 
-            if (isset($_GET["pagina"])) {
-                if ($_GET["pagina"] == "inicio" || $_GET["pagina"] == "pagcostomensual" || $_GET["pagina"] == "pagproduccion" || $_GET["pagina"] == "pagrendimientoinsumos") {
+          //  if(session_start()!=null){
+              if (isset($_GET["pagina"])) {
+                if ($_GET["pagina"] == "inicio" || $_GET["pagina"] == "pagcostomensual" || $_GET["pagina"] == "pagproduccion" || $_GET["pagina"] == "pagrendimientoinsumos" || $_GET["pagina"] == "salir") {
                  
                     $pagina = $_GET["pagina"];
                     
@@ -68,10 +74,14 @@
                     include "paginas/404.php";
                 }
             }
-            else{
-                header("location: vistas/registro.php");
-            }
-
+          
+            // else{
+            //     header("location: index.php?pagina=inicio");
+            // }
+          //}
+          else{
+            header("location: vistas/ingreso.php");
+          }
         
         ?>
       </main>
