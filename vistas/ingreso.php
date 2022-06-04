@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.98.0">
-    <?php
-    
-     require_once "../controlador/formulario-controlador.php";
-     require_once "../modelo/formulario-modelo.php";
 
-    //  $conexion = Conexion::conectar();
-    //  echo '<pre>'; var_dump($conexion); echo '</pre>';
-    // ?>
-    <title>Signin</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.98.0">
+  <?php
 
-    
+  require_once "../controlador/formulario-controlador.php";
+  require_once "../modelo/formulario-modelo.php";
 
-    
+  //  $conexion = Conexion::conectar();
+  //  echo '<pre>'; var_dump($conexion); echo '</pre>';
+  // 
+  ?>
+  <title>Signin</title>
 
-    
 
-<link href="../css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- <style>
+
+
+
+
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -77,46 +79,48 @@
       }
     </style> -->
 
-    
-    <!-- Custom styles for this template -->
-    <link href="../css/signin.css" rel="stylesheet">
-  </head>
-  <body class="text-center">
-    
-<main class="form-signin w-100 m-auto">
-  <form method="post">
-    <img class="mb-4" src="../img/icono.svg" alt="" width="110" height="70">
-    <h1 class="h3 mb-3 fw-normal">Digite su cuenta</h1>
 
-    <div class="form-floating">
-      <input type="email" name="loginEmail" class="form-control" id="floatingInput" placeholder="name@example.com">
-      <label for="floatingInput">Email</label>
-    </div>
-    <div class="form-floating">
-      <input type="password" name="loginContraseña" class="form-control" id="floatingPassword" placeholder="Password">
-      <label for="floatingPassword">Contraseña</label>
-    </div>
+  <!-- Custom styles for this template -->
+  <link href="../css/signin.css" rel="stylesheet">
+</head>
 
-    <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me"> Recordar cuenta
-      </label>
-    </div>
-    
-      <?php 
+<body class="text-center">
 
+  <main class="form-signin w-100 m-auto">
+    <form method="post">
+      <img class="mb-4" src="../img/icono.svg" alt="" width="110" height="70">
+      <h1 class="h3 mb-3 fw-normal">Digite su cuenta</h1>
 
-        // $verif=$_POST['loginEmail'];
-        // $verif2=$_POST['loginContraseña'];
-        // echo $verif;
-        // echo $verif2;
-        $ingreso =  new ControladorFormulario();
-        $ingreso -> ctrLogin();
-        
+      <div class="form-floating">
+        <input type="email" name="loginEmail" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Email</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" name="loginContraseña" class="form-control" id="floatingPassword" placeholder="Password">
+        <label for="floatingPassword">Contraseña</label>
+      </div>
+
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Recordar cuenta
+        </label>
+      </div>
 
 
-        
-        //comparar contraseña
+      <?php
+
+
+      // $verif=$_POST['loginEmail'];
+      // $verif2=$_POST['loginContraseña'];
+      // echo $verif;
+      // echo $verif2;
+      $ingreso =  new ControladorFormulario();
+      $ingreso->ctrLogin();
+
+
+
+
+      //comparar contraseña
       //   if($ingreso!=null){
 
       //     if ($ingreso["email"] == $_POST["loginEmail"] && $ingreso["password"] == $_POST["loginContraseña"]) {
@@ -127,31 +131,36 @@
       //           </script>';
       //           session_start();
       //         }
-              
+
       //       // echo '<script>
       //       // window.location = "../index.php";
       //       // </script>';
       //   }
       //   else{
-          
+
       //     echo '<div class="alert alert-danger">Error al ingresar</div>';
       //     // alerta
-          
-          
-          
+
+
+
       //   }
       // }
-        
-          
+
+
       ?>
 
 
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Ingresar</button>
-    <p class="mt-5 mb-3 text-muted">&copy; 2022–2023</p>
-  </form>
-</main>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Ingresar</button>
+      <div class="checkbox mb-3">
+
+        <a href="../vistas/registro.php">Registrarse</a>
+      </div>
+      <p class="mt-5 mb-3 text-muted">&copy; 2022–2023</p>
+    </form>
+  </main>
 
 
-    
-  </body>
+
+</body>
+
 </html>

@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
 class ControladorFormulario
 {
 
@@ -35,6 +37,7 @@ class ControladorFormulario
 
                 
                 $_SESSION["validar"] = "ok";
+                
                 
 
                 echo '<script>
