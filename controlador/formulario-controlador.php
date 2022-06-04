@@ -6,7 +6,8 @@
                 if (isset($_POST["registroEmail"])) {
                     
                     $tabla = "usuario";
-                    $datos = array("email"=>$_POST["registroEmail"],
+                    $datos = array("nombre"=>$_POST["registroNombre"],
+                                   "email"=>$_POST["registroEmail"],
                                    "password"=>$_POST["registroContraseña"]);
                     
                     $respuesta = ModeloFormulario::mdlRegistro($tabla, $datos);

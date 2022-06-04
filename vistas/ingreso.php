@@ -86,12 +86,8 @@
 <main class="form-signin w-100 m-auto">
   <form method="post">
     <img class="mb-4" src="../img/icono.svg" alt="" width="110" height="70">
-    <h1 class="h3 mb-3 fw-normal">Registre su cuenta</h1>
+    <h1 class="h3 mb-3 fw-normal">Digite su cuenta</h1>
 
-    <div class="form-floating">
-      <input type="text" name="registroNombre" class="form-control" id="floatingInput" placeholder="Nombre">
-      <label for="floatingInput">Nombre</label>
-    </div>
     <div class="form-floating">
       <input type="email" name="registroEmail" class="form-control" id="floatingInput" placeholder="name@example.com">
       <label for="floatingInput">Email</label>
@@ -100,26 +96,6 @@
       <input type="password" name="registroContraseña" class="form-control" id="floatingPassword" placeholder="Password">
       <label for="floatingPassword">Contraseña</label>
     </div>
-    <div class="form-floating">
-      <input type="password" name="registroConfirmarContraseña" class="form-control" id="floatingPassword" placeholder="Confirmar contraseña">
-      <label for="floatingPassword">Confirmar contraseña</label>
-    </div>
-    
-    <!-- <script>
-      var password = document.getElementById("floatingPassword");
-      var confirm_password = document.getElementById("floatingPassword2");
-
-      function validatePassword(){
-        if(password.value != confirm_password.value) {
-          confirm_password.setCustomValidity("Las contraseñas no coinciden");
-        } else {
-          confirm_password.setCustomValidity('');
-        }
-      }
-
-      password.onchange = validatePassword;
-      confirm_password.onkeyup = validatePassword;
-    </script> -->
 
     <div class="checkbox mb-3">
       <label>
