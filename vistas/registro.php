@@ -9,11 +9,11 @@
     <?php
     
      require_once "../controlador/formulario-controlador.php";
-     require_once "../modelo/conexion.php";
+     require_once "../modelo/formulario-modelo.php";
 
-     $conexion = Conexion::conectar();
-     echo '<pre>'; var_dump($conexion); echo '</pre>';
-    ?>
+    //  $conexion = Conexion::conectar();
+    //  echo '<pre>'; var_dump($conexion); echo '</pre>';
+    // ?>
     <title>Signin</title>
 
     
