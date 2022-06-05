@@ -1,5 +1,6 @@
 <?php
     session_start();
+    
 
 class ControladorFormulario
 {
@@ -16,7 +17,7 @@ class ControladorFormulario
                 "password" => $_POST["registroContraseña"]
             );
 
-            $respuesta = ModeloFormulario::mdlRegistro($tabla, null, $datos);
+            $respuesta = ModeloFormulario::mdlRegistro($tabla, $datos);
             return $respuesta;
         }
     }

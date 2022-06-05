@@ -76,7 +76,8 @@
             // }
           //}
           else{
-            header("location: vistas/ingreso.php");
+            echo '<script> window.location = "./vistas/registro.php";</script>';
+            // header("location: vistas/ingreso.php");
           }
         
         ?>
