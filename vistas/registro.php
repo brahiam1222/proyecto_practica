@@ -140,6 +140,10 @@
           echo  "<div class='alert alert-success'>
                   <strong>¡Registro exitoso!</strong> Ya puedes ingresar.
                 </div>";
+        }elseif ($registro == "existe") {
+          echo  "<div class='alert alert-danger'>
+                  <strong>¡Error!</strong> El correo ya está registrado.
+                </div>";
         }
         
       

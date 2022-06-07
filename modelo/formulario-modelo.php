@@ -3,6 +3,14 @@
     class ModeloFormulario{
 
         static public function mdlRegistro($tabla, $datos){
+            //buscar similutud de correo
+            $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE email = :email");
+            $stmt->bindParam(":email", $datos["email"], PDO::PARAM_STR);
+            $stmt->execute();
+            if($stmt->rowCount() > 0){
+                return "existe";
+            }else{
+
 
 
             $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombre, email, password) VALUES (:nombre, :email, :password)");
@@ -24,7 +32,7 @@
             // $stmt->close();
             $stmt = null;
 
-
+        }
 
         }
 
