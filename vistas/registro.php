@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.98.0">
-    <?php
-    
-     require_once "../controlador/formulario-controlador.php";
-     require_once "../modelo/formulario-modelo.php";
 
-    //  $conexion = Conexion::conectar();
-    //  echo '<pre>'; var_dump($conexion); echo '</pre>';
-    // ?>
-    <title>Signin</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.98.0">
+  <link rel="stylesheet" href="../css/valid.css">
+  <?php
 
-    
+  require_once "../controlador/formulario-controlador.php";
+  require_once "../modelo/formulario-modelo.php";
 
-    
+  //  $conexion = Conexion::conectar();
+  //  echo '<pre>'; var_dump($conexion); echo '</pre>';
+  // 
+  ?>
+  <title>Signin</title>
 
-    
 
-<link href="../css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- <style>
+
+
+
+
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -77,35 +80,36 @@
       }
     </style> -->
 
-    
-    <!-- Custom styles for this template -->
-    <link href="../css/signin.css" rel="stylesheet">
-  </head>
-  <body class="text-center">
-    
-<main class="form-signin w-100 m-auto">
-  <form method="post">
-    <img class="mb-4" src="../img/icono.svg" alt="" width="110" height="70">
-    <h1 class="h3 mb-3 fw-normal">Registre su cuenta</h1>
 
-    <div class="form-floating">
-      <input type="text" name="registroNombre" class="form-control" id="floatingInput" placeholder="Nombre">
-      <label for="floatingInput">Nombre</label>
-    </div>
-    <div class="form-floating">
-      <input type="email" name="registroEmail" class="form-control" id="floatingInput" placeholder="name@example.com">
-      <label for="floatingInput">Email</label>
-    </div>
-    <div class="form-floating">
-      <input type="password" name="registroContraseña" class="form-control" id="floatingPassword" placeholder="Password">
-      <label for="floatingPassword">Contraseña</label>
-    </div>
-    <div class="form-floating">
-      <input type="password" name="registroConfirmarContraseña" class="form-control" id="floatingPassword" placeholder="Confirmar contraseña">
-      <label for="floatingPassword">Confirmar contraseña</label>
-    </div>
-    
-    <!-- <script>
+  <!-- Custom styles for this template -->
+  <link href="../css/signin.css" rel="stylesheet">
+</head>
+
+<body class="text-center">
+
+  <main class="form-signin w-100 m-auto">
+    <form id="formulario" method="post">
+      <img class="mb-4" src="../img/icono.svg" alt="" width="110" height="70">
+      <h1 class="h3 mb-3 fw-normal">Registre su cuenta</h1>
+
+      <div class="form-floating">
+        <input type="text" name="registroNombre" class="form-control" id="floatingInput" placeholder="Nombre">
+        <label for="floatingInput">Nombre</label>
+      </div>
+      <div class="form-floating">
+        <input type="email" name="registroEmail" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Email</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" name="registroContraseña" class="form-control" id="floatingPassword" placeholder="Password">
+        <label for="floatingPassword">Contraseña</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" name="registroConfirmarContraseña" class="form-control" id="floatingPassword" placeholder="Confirmar contraseña">
+        <label for="floatingPassword">Confirmar contraseña</label>
+      </div>
+
+      <!-- <script>
       var password = document.getElementById("floatingPassword");
       var confirm_password = document.getElementById("floatingPassword2");
 
@@ -121,42 +125,50 @@
       confirm_password.onkeyup = validatePassword;
     </script> -->
 
-    <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me"> Recordar cuenta
-      </label>
-    </div>
-      <?php 
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Recordar cuenta
+        </label>
+      </div>
 
-        $registro = ControladorFormulario::ctrRegistro();
-        if ($registro == "ok") {
-          
-          echo '<script>
+      <?php
+
+      $registro = ControladorFormulario::ctrRegistro();
+      
+      if ($registro == "ok") {
+
+        echo '<script>
                 if (window.history.replaceState) {
                     window.history.replaceState(null, null, window.location.href);
                 }
           </script>';
 
-          echo  "<div class='alert alert-success'>
+        echo  "<div class='alert alert-success'>
                   <strong>¡Registro exitoso!</strong> Ya puedes ingresar.
                 </div>";
-        }elseif ($registro == "existe") {
-          echo  "<div class='alert alert-danger'>
-                  <strong>¡Error!</strong> El correo ya está registrado.
+      } elseif ($registro == "specialCharacters") {
+
+        echo  "<div class='alert alert-danger'>
+                <strong>¡Error!</strong> No se permiten caracteres especiales.
                 </div>";
-        }
-        
-      
+      } elseif ($registro == "existe") {
+        echo  "<div class='alert alert-danger'>
+                        <strong>¡Error!</strong> El correo ya está registrado.
+                      </div>";
+      }
+
+
       ?>
 
 
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Registrarse</button>
-    <a href="../vistas/ingreso.php">¿Ya tienes cuenta?</a>
-    <p class="mt-5 mb-3 text-muted">&copy; 2022–2023</p>
-  </form>
-</main>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Registrarse</button>
+      <a href="../vistas/ingreso.php">¿Ya tienes cuenta?</a>
+      <p class="mt-5 mb-3 text-muted">&copy; 2022–2023</p>
+    </form>
+  </main>
 
+  <!-- <script src="../js/script.js"></script> -->
 
-    
-  </body>
+</body>
+
 </html>

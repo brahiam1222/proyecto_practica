@@ -1,6 +1,6 @@
 <?php
-    session_start();
-    
+session_start();
+
 
 class ControladorFormulario
 {
@@ -10,15 +10,26 @@ class ControladorFormulario
 
         if (isset($_POST["registroEmail"])) {
 
-            $tabla = "usuario";
-            $datos = array(
-                "nombre" => $_POST["registroNombre"],
-                "email" => $_POST["registroEmail"],
-                "password" => $_POST["registroContraseña"]
-            );
+            if (preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["registroEmail"])&&
+                preg_match('/^[a-zA-Z0-9]+$/', $_POST["registroContraseña"])&&
+                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/',$_POST["registroNombre"])){
+           
+                $token = md5($_POST["registroEmail"].$_POST["registroContraseña"]);
+                $tabla = "usuario";
+                $datos = array(
+                    "token" => $token,
+                    "nombre" => $_POST["registroNombre"],
+                    "email" => $_POST["registroEmail"],
+                    "password" => $_POST["registroContraseña"]
+                );
 
-            $respuesta = ModeloFormulario::mdlRegistro($tabla, $datos);
-            return $respuesta;
+                $respuesta = ModeloFormulario::mdlRegistro($tabla, $datos);
+                return $respuesta;
+            } else {
+                
+                $respuesta = "specialCharacters";
+                return $respuesta;
+            }
         }
     }
 
@@ -36,10 +47,10 @@ class ControladorFormulario
 
             if ($respuesta["email"] == $_POST["loginEmail"] && $respuesta["password"] == $_POST["loginContraseña"]) {
 
-                
+
                 $_SESSION["validar"] = "ok";
-                
-                
+
+
 
                 echo '<script>
                 if (window.history.replaceState) {
