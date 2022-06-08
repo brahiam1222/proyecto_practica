@@ -53,6 +53,29 @@
         }
 
 
+        static public function mdlActualizarIntentos($tabla, $valor, $token){
+                
+                $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET intentos = :intentos WHERE token = :token");
+    
+                $stmt->bindParam(":intentos", $valor, PDO::PARAM_INT);
+                $stmt->bindParam(":token", $token, PDO::PARAM_STR);
+    
+                if ($stmt->execute()) {
+    
+                    return "ok";
+    
+                } else {
+    
+                    return "error";
+    
+                }
+    
+                // $stmt->close();
+                $stmt = null;
+    
+        }
+
+
 
 
     }
