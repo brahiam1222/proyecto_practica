@@ -28,7 +28,7 @@
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><a href="index.php?pagina=inicio" class="nav-link px-2 link-secondary">Inicio</a></li>
-          <li><a href="index.php?pagina=pagcostomensual" class="nav-link px-2 link-dark">Costo Mensual</a></li>
+          <li><a href="index.php?pagina=terminacion" class="nav-link px-2 link-dark">Terminación</a></li>
           <li><a href="index.php?pagina=consolidado" class="nav-link px-2 link-dark">Consolidado</a></li>
           <li><a href="index.php?pagina=lluvia" class="nav-link px-2 link-dark">Lluvia</a></li>
           <!-- <li><a href="../vistas/registro.php" class="nav-link px-2 link-dark">Registro</a></li> -->
@@ -61,7 +61,7 @@
 
           //  if(session_start()!=null){
               if (isset($_GET["pagina"])) {
-                if ($_GET["pagina"] == "inicio" || $_GET["pagina"] == "consolidado" || $_GET["pagina"] == "pagproduccion" || $_GET["pagina"] == "lluvia" || $_GET["pagina"] == "salir") {
+                if ($_GET["pagina"] == "inicio" || $_GET["pagina"] == "consolidado" || $_GET["pagina"] == "terminacion" || $_GET["pagina"] == "lluvia" || $_GET["pagina"] == "salir") {
                  
                     $pagina = $_GET["pagina"];
                     

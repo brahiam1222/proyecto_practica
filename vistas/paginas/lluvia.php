@@ -15,7 +15,7 @@ if (!isset($_SESSION["validar"])) {
 
 ?>
 
-<iframe title="Sigatoka y precipitaciones" width="1026" height="650" src="https://app.powerbi.com/view?r=eyJrIjoiYTE0MDc0MzUtM2Y2ZC00MzcxLWE5NzUtMjAxNjlkY2E2OWIwIiwidCI6ImI5NDc0NWY2LTExYjgtNDlkYi04NTdmLTI0MDFhY2U3ZDViOCIsImMiOjR9&pageName=ReportSection" frameborder="0" allowFullScreen="true"></iframe>
+<iframe title="Informe Precipitacion  y Sigatoka - Lluvia" width="1024" height="612" src="https://app.powerbi.com/view?r=eyJrIjoiNzlhNDZjN2ItYjY4NS00ZWY4LTliZDAtNzM2ODc0ZjFlNDI0IiwidCI6ImI5NDc0NWY2LTExYjgtNDlkYi04NTdmLTI0MDFhY2U3ZDViOCIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
 
 
 <?php

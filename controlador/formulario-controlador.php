@@ -18,11 +18,14 @@ class ControladorFormulario
 
                 $token = md5($_POST["registroEmail"] . $_POST["registroContraseña"]);
                 $tabla = "usuario";
+                $encriptar = crypt($_POST["registroContraseña"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
+
+
                 $datos = array(
                     "token" => $token,
                     "nombre" => $_POST["registroNombre"],
                     "email" => $_POST["registroEmail"],
-                    "password" => $_POST["registroContraseña"]
+                    "password" => $encriptar
                 );
 
                 $respuesta = ModeloFormulario::mdlRegistro($tabla, $datos);
@@ -52,14 +55,20 @@ class ControladorFormulario
                 $respuesta = ModeloFormulario::mdlLogin($tabla, $columna, $datos);
                 // print_r($respuesta); 
 
-                if ($respuesta["email"] == $_POST["loginEmail"] && $respuesta["password"] == $_POST["loginContraseña"]) {
+                $encriptar = crypt($_POST["loginContraseña"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
+
+                if ($respuesta != null) {
 
 
-                    $_SESSION["validar"] = "ok";
+
+                    if ($respuesta["email"] == $_POST["loginEmail"] && $respuesta["password"] == $encriptar) {
+
+                        ModeloFormulario::mdlActualizarIntentos($tabla, 0, $respuesta["token"]);
+                        $_SESSION["validar"] = "ok";
 
 
 
-                    echo '<script>
+                        echo '<script>
                 if (window.history.replaceState) {
                     window.history.replaceState(null, null, window.location.href);
                 }
@@ -69,30 +78,39 @@ class ControladorFormulario
 
 
           </script>';
-                } elseif ($respuesta["email"] == $_POST["loginEmail"] && $respuesta["password"] != $_POST["loginContraseña"]) {
-                    
-                    $tabla = "usuario";
-                    $intentos_fallidos = $respuesta["intentos"] + 1;
+                    }
+                    if ($respuesta["intentos"] <= 3) {
+                        if ($respuesta["email"] == $_POST["loginEmail"] && $respuesta["password"] != $_POST["loginContraseña"]) {
 
-                    $actualizarIntentosFallidos = ModeloFormulario::mdlActualizarIntentos($tabla, $intentos_fallidos, $respuesta["token"]);
-                    print_r($intentos_fallidos);
-                    echo '<script>
-                if (window.history.replaceState) {
-                    window.history.replaceState(null, null, window.location.href);
-                }
-          </script>';
+                            $tabla = "usuario";
+                            $intentos_fallidos = $respuesta["intentos"] + 1;
 
-                    echo  "<div class='alert alert-danger'>
-                  <strong>¡Error al ingresar!</strong> email o contraseña no coincide.
-                </div>";
-                }else{
-                    echo  "<div class='alert alert-danger'>
-                  <strong>¡Error al ingresar!</strong> email o contraseña no coincide.";}
-            } else {
-                
-                echo  "<div class='alert alert-danger'>
-                      <strong>¡Error al ingresar!</strong> Ingrese datos válidos    .
+                            ModeloFormulario::mdlActualizarIntentos($tabla, $intentos_fallidos, $respuesta["token"]);
+                            print_r($intentos_fallidos);
+                            echo '<script>
+                    if (window.history.replaceState) {
+                        window.history.replaceState(null, null, window.location.href);
+                    }
+              </script>';
+
+                            echo  "<div class='alert alert-danger'>
+                      <strong>¡Error al ingresar!</strong> email o contraseña no coincide.
                     </div>";
+                        } else {
+                            echo  "<div class='alert alert-danger'>
+                      <strong>¡Error al ingresar!</strong> email o contraseña no coincide.
+                      </div>";
+                        }
+                    } else {
+                        echo  "<div class='alert alert-warning'>
+                      <strong>¡Error al ingresar!</strong> Demasiado número de intentos.
+                      </div>";
+                    }
+                }
+            } else {
+                echo  "<div class='alert alert-danger'>
+                  <strong>¡Error al ingresar!</strong> Ingrese datos válidos.
+                  </div>";
             }
         }
     }
