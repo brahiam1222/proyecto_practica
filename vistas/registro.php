@@ -89,7 +89,7 @@
 
   <main class="form-signin w-100 m-auto">
     <form id="formulario" method="post">
-      <img class="mb-4" src="../img/icono.svg" alt="" width="110" height="70">
+      <img class="mb-4" src="../img/icono.svg" alt="" width="120" height="80">
       <h1 class="h3 mb-3 fw-normal">Registre su cuenta</h1>
 
       <div class="form-floating">
