@@ -97,7 +97,7 @@
         <label for="floatingInput">Nombre</label>
       </div>
       <div class="form-floating">
-        <input type="email" name="registroEmail" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <input type="email" name="registroEmail" class="form-control" id="email" placeholder="name@example.com">
         <label for="floatingInput">Email</label>
       </div>
       <div class="form-floating">
@@ -167,7 +167,7 @@
     </form>
   </main>
 
-  <!-- <script src="../js/script.js"></script> -->
+  <script src="../js/script.js"></script>
 
 </body>
 

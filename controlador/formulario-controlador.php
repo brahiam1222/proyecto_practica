@@ -38,6 +38,19 @@ class ControladorFormulario
         }
     }
 
+
+    public function ctrSeleccionarUsuario($item, $valor)
+    {
+
+        $tabla = "usuario";
+
+        $respuesta = ModeloFormulario::mdlSeleccionarUsuario($tabla, $item, $valor);
+
+        return $respuesta;
+    }
+
+
+
     public function ctrLogin()
     {
 
