@@ -6,22 +6,44 @@
 
 
 
-$(document).ready(function(){
-$("#email").change(function () {
-    var email = $(this).val();
-    var datos = new FormData();
-    datos.append("validarEmail", email);
-    $.ajax({
-        url: 'ajax/formulario.ajax.php',
-        method: 'POST',
-        data: datos,
-        cache: false,
-        contentType: false,
-        processData: false,
-        success: function (respuesta) {
-            console.log("respuesta", respuesta);
-        }
-    })})});
+
+// $(document).ready(function () {
+//     $('form').submit(function (e) {
+//         e.preventDefault();
+//         var data = $(this).serializeArray();
+
+//         $.ajax({
+//             type: 'POST',
+//             url: 'http://localhost:3000/api/users',
+//             data: data,
+//             success: function (data) {
+//             }
+//         }).done(function (data) {
+//         });
+
+//         console.log(data);
+//     })
+// });
+
+
+// $(document).ready(function () {
+//     $("#email").change(function () {
+//         var email = $(this).val();
+//         var datos = new FormData();
+//         datos.append("validarEmail", email);
+//         $.ajax({
+//             url: 'ajax/formulario.ajax.php',
+//             method: 'POST',
+//             data: datos,
+//             cache: false,
+//             contentType: false,
+//             processData: false,
+//             success: function (respuesta) {
+//                 console.log("respuesta", respuesta);
+//             }
+//         })
+//     })
+// });
 
 
 
@@ -29,24 +51,42 @@ $("#email").change(function () {
 
 
 
-// const registro = document.getElementsByName('registroEmail')[0];
-// registro.addEventListener('keyup', (e) => {
-//     var email = e.target.value;
-//     console.log(email);
-//     var datos = new FormData();
-//     datos.append('validarEmail', email);
+const registro = document.getElementsByName('registroEmail')[0];
+registro.addEventListener('keyup', (e) => {
+    if (e.target.value <= "" || e.target.value == null) {
+        registro.classList.add('is-invalid');
+        registro.classList.remove('is-valid');
+        registro.parent().
+    }
+    else {
+        var email = e.target.value;
+        var datos = new FormData();
+        datos.append("validarEmail", email);
+        // console.log(email);
 
-//     registro.ajax({
-//         url: 'ajax/formulario.ajax.php',
-//         method: 'POST',
-//         data: datos,
-//         cache: false,
-//         contentType: false,
-//         processData: false,
-//         success: function (respuesta) {
 
-//             console.log("respuesta", respuesta);
+        $.ajax({
+            url: "../ajax/formulario.ajax.php",
+            method: "POST",
+            data: datos,
+            cache: false,
+            contentType: false,
+            processData: false,
+            dataType: "json",
+            success: function (respuesta) {
+                // console.log(registro);
 
-//         }
-//     });
-// })
+                // console.log("respuesta", respuesta);
+                if (respuesta) {
+                    registro.classList.add('is-invalid');
+                    registro.classList.remove('is-valid');
+                } else {
+                    registro.classList.add('is-valid');
+                    registro.classList.remove('is-invalid');
+                }
+
+
+            }
+        });
+    }
+})

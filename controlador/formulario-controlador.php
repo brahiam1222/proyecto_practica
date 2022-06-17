@@ -39,7 +39,7 @@ class ControladorFormulario
     }
 
 
-    public function ctrSeleccionarUsuario($item, $valor)
+    static public function ctrSeleccionarUsuario($item, $valor)
     {
 
         $tabla = "usuario";

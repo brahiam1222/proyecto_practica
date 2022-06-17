@@ -8,6 +8,8 @@
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Hugo 0.98.0">
   <link rel="stylesheet" href="../css/valid.css">
+  
+  <!-- <script src="Scripts/My Script File -1.7.1.js"></script> -->
   <?php
 
   require_once "../controlador/formulario-controlador.php";
@@ -97,7 +99,7 @@
         <label for="floatingInput">Nombre</label>
       </div>
       <div class="form-floating">
-        <input type="email" name="registroEmail" class="form-control" id="email" placeholder="name@example.com">
+        <input type="email" name="registroEmail" class="form-control" id="floatingInput" placeholder="name@example.com">
         <label for="floatingInput">Email</label>
       </div>
       <div class="form-floating">
@@ -167,6 +169,8 @@
     </form>
   </main>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="http://mysite.com/jquery.min.js"></script>
   <script src="../js/script.js"></script>
 
 </body>

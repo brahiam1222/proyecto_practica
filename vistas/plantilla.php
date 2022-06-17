@@ -9,6 +9,7 @@
     <link href="./css/carousel.css" rel="stylesheet">
     <link href="./css/carousel.rtl.css" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    
     <title>Principal</title>
 </head>
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
