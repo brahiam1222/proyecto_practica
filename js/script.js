@@ -56,7 +56,7 @@ registro.addEventListener('keyup', (e) => {
     if (e.target.value <= "" || e.target.value == null) {
         registro.classList.add('is-invalid');
         registro.classList.remove('is-valid');
-        registro.parent().
+        
     }
     else {
         var email = e.target.value;
