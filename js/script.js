@@ -37,6 +37,12 @@ registro.addEventListener('keyup', (e) => {
         });
     }
 })
+
+
+
+
+
+
 //capturar name con jquery y agregarle funcion change
 // $(document).ready(function(){
 //     $("#name").change(function(){
