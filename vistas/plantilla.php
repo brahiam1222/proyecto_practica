@@ -19,9 +19,13 @@
       include"paginas/modulos/cabecera.php";
       include"paginas/modulos/contenido-cuerpo.php";
       include"paginas/modulos/footer.php";
+
+      //hacer la redirección de otras paginas en el contenido del cuerpo con el get paginas
     ?>
 
   </body>
 
-
   </html>
+
+
+  

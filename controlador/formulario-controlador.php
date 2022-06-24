@@ -86,7 +86,7 @@ class ControladorFormulario
                     window.history.replaceState(null, null, window.location.href);
                 }
 
-                window.location = "../index.php?pagina=inicio";
+                window.location = "../index.php?modulo=contenido-inicio";
 
 
 

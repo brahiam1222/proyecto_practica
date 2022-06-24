@@ -1,23 +1,4 @@
 
-<?php
-  
-  
-  
-
-
-
-  if (!isset($_SESSION["validar"])) {
-
-  echo '<script> window.location = "index.php";</script>';
-  return;
-} else {
-  if ($_SESSION["validar"] != "ok") {
-    echo '<script> window.location = "plantilla.php";</script>';
-    return;
-  }
-}
-
-?>
 
 </head>
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -37,7 +18,7 @@
       </a>
 
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="index.php?pagina=contenido-inicio" class="nav-link px-2 link-secondary">Inicio</a></li>
+        <li><a href="index.php?modulo=contenido-inicio" class="nav-link px-2 link-secondary">Inicio</a></li>
         <li><a href="" class="nav-link px-2 link-dark">otra pagina</a></li>
         <li><a href="" class="nav-link px-2 link-dark">otra</a></li>
         <li><a href="" class="nav-link px-2 link-dark">nueva</a></li>
@@ -70,6 +51,29 @@
 
   <div class="container">
 
-
+    
+    <?php 
+    
+    if (isset($_GET["modulo"])) {
+      if ($_GET["modulo"] == "contenido-inicio" || $_GET["modulo"] == "contenido-consolidado" || $_GET["modulo"] == "contenido-terminacion" || $_GET["modulo"] == "contenido-lluvia" || $_GET["modulo"] == "salir") {
+      
+      //   echo  "<div class='alert alert-success'>
+      //   <strong>¡Registro exitoso!</strong> Ya puedes ingresar.
+      // </div>";
+      
+      $modulo = $_GET["modulo"];
+      //incluye la modulo dentro del body como debe hacerlo un modulo, pero el "Contenido-inicio" es otra página
+      //hallar la forma de iniciar otra página al darle al botón inicio
+      //Cambiar la forma de redirigir las páginas, usar el Dashboard para navegar entre consolidado, lluvia, etc. en sus href enviando gets
+      //y el método de redigir actual usarlo para navegar entre páginas, no entre modulos --- o al contrario
+      // el método de redigir con header puede ser una opción para cambiar entre informes u otras opciones
   
+      include "./vistas/paginas/modulos/" . $modulo . ".php";}
+      
+    } else {
+      include "./vistas/paginas/404.php";
+    }
+    
+    
+    ?>
     
