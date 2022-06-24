@@ -1,20 +1,21 @@
 <body>
+
   <div class="container-fluid">
     <div class="row">
       <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
         <div class="position-sticky pt-3">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">
+              <a class="nav-link active" aria-current="page" href="#"  onclick="show('Consolidado')">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home align-text-bottom" aria-hidden="true">
                   <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                   <polyline points="9 22 9 12 15 12 15 22"></polyline>
                 </svg>
-                Dashboard
+                Consolidado
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.php?pagina=contenido-terminacion">
+              <a class="nav-link" href="#" onclick="show('Terminacion')">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file align-text-bottom" aria-hidden="true">
                   <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
                   <polyline points="13 2 13 9 20 9"></polyline>
@@ -23,24 +24,24 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.php?pagina=contenido-consolidado">
+              <a class="nav-link" href="#" onclick="show('Lluvia')">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart align-text-bottom" aria-hidden="true">
                   <circle cx="9" cy="21" r="1"></circle>
                   <circle cx="20" cy="21" r="1"></circle>
                   <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
                 </svg>
-                Consolidado
+                Lluvia
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.php?pagina=contenido-lluvia">
+              <a class="nav-link" href="#">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users align-text-bottom" aria-hidden="true">
                   <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                   <circle cx="9" cy="7" r="4"></circle>
                   <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
                   <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                 </svg>
-                Lluvia
+                ...
               </a>
             </li>
             <li class="nav-item">
@@ -156,49 +157,13 @@
           </div>
         </div>
 
+        <div id="Consolidado" class="container-fluid">
+          <iframe title="Informe Consolidado de Producción - CNS_MANANTIALES" width="1060" height="700" src="https://app.powerbi.com/view?r=eyJrIjoiMGE4MTY2NTctYzFmNC00ZWUxLWExNDQtNDEzNjRjZDMwMDgwIiwidCI6ImI5NDc0NWY2LTExYjgtNDlkYi04NTdmLTI0MDFhY2U3ZDViOCIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
 
-        <?php
+        </div>
 
-        //  if(session_start()!=null){
+        <div id="Lluvia" class="container-fluid">
+        <iframe title="Informe Precipitacion  y Sigatoka - Lluvia" width="1060" height="750" src="https://app.powerbi.com/view?r=eyJrIjoiNDEyOTYyN2ItYjU3Yi00ZjViLTg4ODgtMzQ5NWRiMzE0ZTNiIiwidCI6ImI5NDc0NWY2LTExYjgtNDlkYi04NTdmLTI0MDFhY2U3ZDViOCIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
 
-
-
-        if (isset($_GET["pagina"])) {
-          if ($_GET["pagina"] == "contenido-inicio" || $_GET["pagina"] == "contenido-consolidado" || $_GET["pagina"] == "contenido-terminacion" || $_GET["pagina"] == "contenido-lluvia" || $_GET["pagina"] == "salir") {
-
-            $pagina = $_GET["pagina"];
-            //incluye la pagina dentro del body como debe hacerlo un modulo, pero el "Contenido-inicio" es otra página
-            //hallar la forma de iniciar otra página al darle al botón inicio
-            //Cambiar la forma de redirigir las páginas, usar el Dashboard para navegar entre consolidado, lluvia, etc. en sus href enviando gets
-            //y el método de redigir actual usarlo para navegar entre páginas, no entre modulos --- o al contrario
-            // el método de redigir con header puede ser una opción para cambiar entre informes u otras opciones
-
-            include "./vistas/paginas/modulos/" . $pagina . ".php";
-          }
-        } elseif (isset($_GET["modulo"])) {
-          if ($_GET["modulo"] == "contenido-inicio" || $_GET["modulo"] == "contenido-consolidado" || $_GET["modulo"] == "contenido-terminacion" || $_GET["modulo"] == "contenido-lluvia" || $_GET["modulo"] == "salir") {
-
-            $modulo = $_GET["modulo"];
-            //incluye la modulo dentro del body como debe hacerlo un modulo, pero el "Contenido-inicio" es otra página
-            //hallar la forma de iniciar otra página al darle al botón inicio
-            //Cambiar la forma de redirigir las páginas, usar el Dashboard para navegar entre consolidado, lluvia, etc. en sus href enviando gets
-            //y el método de redigir actual usarlo para navegar entre páginas, no entre modulos --- o al contrario
-            // el método de redigir con header puede ser una opción para cambiar entre informes u otras opciones
-
-            include "./vistas/paginas/modulos/" . $modulo . ".php";
-          } else {
-            include "./vistas/paginas/404.php";
-          }
-        }
-
-
-        // else{
-        //     header("location: index.php?pagina=inicio");
-        // }
-        //}
-        else {
-          echo '<script> window.location = "./vistas/registro.php";</script>';
-          // header("location: vistas/ingreso.php");
-        }
-
-        ?>
+        </div>
+        
