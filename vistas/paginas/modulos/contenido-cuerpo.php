@@ -168,145 +168,274 @@
         </div> -->
 
 
-                                <div id="Terminacion" class="row g-5">
-                                  <div class="col-md-5 col-lg-4 order-md-last">
-                                    <h4 class="d-flex justify-content-between align-items-center mb-3">
-                                      <span class="text-primary">Your cart</span>
-                                      <span class="badge bg-primary rounded-pill">3</span>
-                                    </h4>
-                                    <ul class="list-group mb-3">
-                                      <li class="list-group-item d-flex justify-content-between lh-sm">
-                                        <div>
-                                          <h6 class="my-0">Product name</h6>
-                                          <small class="text-muted">Brief description</small>
-                                        </div>
-                                        <span class="text-muted">$12</span>
-                                      </li>
-                                      <li class="list-group-item d-flex justify-content-between lh-sm">
-                                        <div>
-                                          <h6 class="my-0">Second product</h6>
-                                          <small class="text-muted">Brief description</small>
-                                        </div>
-                                        <span class="text-muted">$8</span>
-                                      </li>
-                                      <li class="list-group-item d-flex justify-content-between lh-sm">
-                                        <div>
-                                          <h6 class="my-0">Third item</h6>
-                                          <small class="text-muted">Brief description</small>
-                                        </div>
-                                        <span class="text-muted">$5</span>
-                                      </li>
-                                      <li class="list-group-item d-flex justify-content-between bg-light">
-                                        <div class="text-success">
-                                          <h6 class="my-0">Promo code</h6>
-                                          <small>EXAMPLECODE</small>
-                                        </div>
-                                        <span class="text-success">−$5</span>
-                                      </li>
-                                      <li class="list-group-item d-flex justify-content-between">
-                                        <span>Total (USD)</span>
-                                        <strong>$20</strong>
-                                      </li>
-                                    </ul>
+        <div id="Terminacion" class="row g-5">
+          <!-- <div class="col-md-5 col-lg-4 order-md-last">
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+              <span class="text-primary">Your cart</span>
+              <span class="badge bg-primary rounded-pill">3</span>
+            </h4>
+            <ul class="list-group mb-3">
+              <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                  <h6 class="my-0">Product name</h6>
+                  <small class="text-muted">Brief description</small>
+                </div>
+                <span class="text-muted">$12</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                  <h6 class="my-0">Second product</h6>
+                  <small class="text-muted">Brief description</small>
+                </div>
+                <span class="text-muted">$8</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                  <h6 class="my-0">Third item</h6>
+                  <small class="text-muted">Brief description</small>
+                </div>
+                <span class="text-muted">$5</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between bg-light">
+                <div class="text-success">
+                  <h6 class="my-0">Promo code</h6>
+                  <small>EXAMPLECODE</small>
+                </div>
+                <span class="text-success">−$5</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between">
+                <span>Total (USD)</span>
+                <strong>$20</strong>
+              </li>
+            </ul>
 
-                                    <form class="card p-2">
-                                      <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Promo code">
-                                        <button type="submit" class="btn btn-secondary">Redeem</button>
-                                      </div>
-                                    </form>
-                                  </div>
+            <form class="card p-2">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Promo code">
+                <button type="submit" class="btn btn-secondary">Redeem</button>
+              </div>
+            </form>
+          </div> -->
           <div class="col-md-7 col-lg-8">
             <!-- Select de fincas -->
-              <label for="exampleFormControlSelect1">Fincas</label>
-              <select class="form-control mb-3" id="fincas">
-                <option>Manantiales</option>
-                <option>Madelandia</option>
-                <option>Santa Helena</option>
-                <option>Corrales</option>
-                <option>Galilea</option>
-                <option>Curazao</option>
-              </select>
+            <label for="fincas">Fincas</label>
+            <select class="form-control mb-3" id="fincas">
+              <option value="MN">Manantiales</option>
+              <option value="MD">Madelandia</option>
+              <option value="SH">Santa Helena</option>
+              <option value="CO">Corrales</option>
+              <option value="GA">Galilea</option>
+              <option value="CU">Curazao</option>
+            </select>
             <form class="form-inline" novalidate="">
               <div class="row g-3">
                 <div class="col-sm-2 form-group">
                   <label for="area" class="form-label">Area Recorrida</label>
                   <input type="text" class="form-control" id="area" placeholder="" value="" required="">
-                  
+
                 </div>
                 <div class="col-sm-2 form-group">
                   <label for="cajas" class="form-label">Cajas Estimadas</label>
                   <input type="text" class="form-control" id="cajas" placeholder="" value="" required="">
-                  
+
                 </div>
 
                 <div class="col-sm-2 form-group">
                   <label for="empaca" class="form-label">Persona Empacadora</label>
                   <input type="text" class="form-control" id="empaca" placeholder="" value="" required="">
-                  
+
                 </div>
                 <div class="col-sm-2 form-group">
                   <label for="campo" class="form-label">Persona Campo</label>
                   <input type="text" class="form-control" id="campo" placeholder="" value="" required="">
-                  
+
                 </div>
-                  <div class="col-sm-2 form-group">
+                <div class="col-sm-2 form-group">
                   <label for="mano" class="form-label">Calibre 2da Mano</label>
                   <input type="text" class="form-control" id="mano" placeholder="" value="" required="">
-                  
-                </div>
-                <div class="form-control">
-              <div class="row">
 
-                <div class="col-sm-4 form-label">
-                  <a for="racimosCortados" class="form-label"onclick="emergentes('RacimosCortados')" ondblclick="sinemergentes('RacimosCortados')">Racimos Cortados</a>
-                  
-                  
                 </div>
-                <div id="RacimosCortados" class="col-sm-2 form-group venEmergente">
-                  
-                <input type="text" class="form-control" id="sm5" placeholder="Corte 5 semanas" value="" required="">
-                <input type="text" class="form-control" id="sm6" placeholder="Corte 6 semanas" value="" required="">
-                <input type="text" class="form-control" id="sm7" placeholder="Corte 7 semanas" value="" required="">
-                <input type="text" class="form-control" id="sm8" placeholder="Corte 8 semanas" value="" required="">
-                <input type="text" class="form-control" id="sm9" placeholder="Corte 9 semanas" value="" required="">
-                <input type="text" class="form-control" id="sm10" placeholder="Corte 10 semanas" value="" required="">
-                <input type="text" class="form-control" id="sm11" placeholder="Corte 11 semanas" value="" required="">
-                <input type="text" class="form-control" id="sm12" placeholder="Corte 12 semanas" value="" required="">
-                <input type="text" class="form-control" id="sm13" placeholder="Corte 13 semanas" value="" required="">
-                <input type="text" class="form-control" id="rechazados" placeholder="Racimos Rechazados" value="" required="">
-                  
+                <div class="">
+                  <div class="row">
+
+                    <div class="col-sm-4 form-label">
+                      <a for="racimosCortados" class="form-label" onclick="emergentes('RacimosCortados')" ondblclick="sinemergentes('RacimosCortados')">Racimos Cortados</a>
+
+
+                    </div>
+                    <div id="RacimosCortados" class="col-sm-2 form-group venEmergente">
+
+                      <input type="text" class="form-control" id="sm5" placeholder="Corte 5 semanas" value="" required="">
+                      <input type="text" class="form-control" id="sm6" placeholder="Corte 6 semanas" value="" required="">
+                      <input type="text" class="form-control" id="sm7" placeholder="Corte 7 semanas" value="" required="">
+                      <input type="text" class="form-control" id="sm8" placeholder="Corte 8 semanas" value="" required="">
+                      <input type="text" class="form-control" id="sm9" placeholder="Corte 9 semanas" value="" required="">
+                      <input type="text" class="form-control" id="sm10" placeholder="Corte 10 semanas" value="" required="">
+                      <input type="text" class="form-control" id="sm11" placeholder="Corte 11 semanas" value="" required="">
+                      <input type="text" class="form-control" id="sm12" placeholder="Corte 12 semanas" value="" required="">
+                      <input type="text" class="form-control" id="sm13" placeholder="Corte 13 semanas" value="" required="">
+                      <input type="text" class="form-control" id="rechazados" placeholder="Racimos Rechazados" value="" required="">
+
+                    </div>
+                  </div>
+
                 </div>
+                <div class="">
+                  <div class="row">
+
+                    <div class="col-sm-4 form-label">
+                      <a for="RacimosRepicados" class="form-label" onclick="emergentes('RacimosRepicados')" ondblclick="sinemergentes('RacimosRepicados')">Racimos Repicados</a>
+
+
+                    </div>
+                    <div id="RacimosRepicados" class="col-sm-2 form-group venEmergente">
+
+                      <input type="text" class="form-control" id="sm5" placeholder="Corte 5 semanas" value="" required="">
+                      <input type="text" class="form-control" id="sm6" placeholder="Corte 6 semanas" value="" required="">
+                      <input type="text" class="form-control" id="sm7" placeholder="Corte 7 semanas" value="" required="">
+                      <input type="text" class="form-control" id="sm8" placeholder="Corte 8 semanas" value="" required="">
+                      <input type="text" class="form-control" id="sm9" placeholder="Corte 9 semanas" value="" required="">
+                      <input type="text" class="form-control" id="sm10" placeholder="Corte 10 semanas" value="" required="">
+                      <input type="text" class="form-control" id="sm11" placeholder="Corte 11 semanas" value="" required="">
+                      <input type="text" class="form-control" id="sm12" placeholder="Corte 12 semanas" value="" required="">
+                      <input type="text" class="form-control" id="sm13" placeholder="Corte 13 semanas" value="" required="">
+
+
+                    </div>
+                  </div>
+
+                </div>
+                <div class="">
+
+
+                  <div class="col-sm-6 form-group">
+
+                    <label for="fincas">Defecto 1</label>
+                    <div class="input-group">
+
+                      <select class="form-control mb-3" id="fincas">
+                        <option value="MN">Cicatriz Manejo</option>
+                        <option value="MD">Desgarre</option>
+                        <option value="SH">Malformado</option>
+                        <option value="CO">Latex Viejo</option>
+                        <option value="GA">Bajo Grado</option>
+                        <option value="CU">Sobre Grado</option>
+                      </select>
+                      <input class="form-control mb-3" type="text">
+                      <span class=""> % </span>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 form-group">
+
+                    <label for="fincas">Defecto 2</label>
+                    <div class="input-group">
+
+                      <select class="form-control mb-3" id="fincas">
+                        <option value="MN">Cicatriz Manejo</option>
+                        <option value="MD">Desgarre</option>
+                        <option value="SH">Malformado</option>
+                        <option value="CO">Latex Viejo</option>
+                        <option value="GA">Bajo Grado</option>
+                        <option value="GA">Bacteriosis</option>
+                        <option value="CU">Sobre Grado</option>
+                      </select>
+                      <input class="form-control mb-3" type="text">
+                      <span class=""> % </span>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 form-group">
+
+                    <label for="fincas">Defecto 3</label>
+                    <div class="input-group">
+
+                      <select class="form-control mb-3" id="fincas">
+                        <option value="MN">Cicatriz Manejo</option>
+                        <option value="MD">Desgarre</option>
+                        <option value="SH">Malformado</option>
+                        <option value="CO">Latex Viejo</option>
+                        <option value="GA">Bajo Grado</option>
+                        <option value="CU">Sobre Grado</option>
+                      </select>
+                      <input class="form-control mb-3" type="text">
+                      <span class=""> % </span>
+                    </div>
+                  </div>
                 </div>
 
-              </div>
-              <div class="form-control">
-              <div class="row">
 
-                <div class="col-sm-4 form-label">
-                  <a for="RacimosRepicados" class="form-label"onclick="emergentes('RacimosRepicados')" ondblclick="sinemergentes('RacimosRepicados')">Racimos Repicados</a>
-                  
-                  
-                </div>
-                <div id="RacimosRepicados" class="col-sm-2 form-group venEmergente">
-                  
-                <input type="text" class="form-control" id="sm5" placeholder="Corte 5 semanas" value="" required="">
-                <input type="text" class="form-control" id="sm6" placeholder="Corte 6 semanas" value="" required="">
-                <input type="text" class="form-control" id="sm7" placeholder="Corte 7 semanas" value="" required="">
-                <input type="text" class="form-control" id="sm8" placeholder="Corte 8 semanas" value="" required="">
-                <input type="text" class="form-control" id="sm9" placeholder="Corte 9 semanas" value="" required="">
-                <input type="text" class="form-control" id="sm10" placeholder="Corte 10 semanas" value="" required="">
-                <input type="text" class="form-control" id="sm11" placeholder="Corte 11 semanas" value="" required="">
-                <input type="text" class="form-control" id="sm12" placeholder="Corte 12 semanas" value="" required="">
-                <input type="text" class="form-control" id="sm13" placeholder="Corte 13 semanas" value="" required="">
-                
-                  
-                </div>
+
+
+
+                <div class="">
+                  <div class="row">
+
+                    <div class="col-sm-4 form-label">
+                      <a for="FrutaExportada" class="form-label" onclick="emergentes('FrutaExportada')" ondblclick="sinemergentes('FrutaExportada')">Fruta Exportada</a>
+
+
+                    </div>
+                    <div id="FrutaExportada" class="col-sm-4 form-group venEmergente">
+
+                      <!-- tabla de 4 columnas -->
+                      <table id="tabla" class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th>Codigo</th>
+                            <th>Fruta</th>
+                            <th>Cantidad</th>
+                            <th>Rechazo</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><input type="text" class="form-control" id="cod" placeholder="" value="" required></td>
+                            <td><input type="text" class="form-control" id="sm1" placeholder="" value="" disabled></td>
+                            <td><input type="text" class="form-control" id="sm2" placeholder="" value="" required=""></td>
+                            <td><input type="text" class="form-control" id="sm3" placeholder="" value="" required=""></td>
+                          </tr>
+                          
+                      </table>
+
+                      <input type="button" value="+" onclick="insertaFila()">
+
+
+                    </div>
+                  </div>
+
                 </div>
 
-              </div>
+                <div class="col-sm-2 form-group">
+                  <label for="area" class="form-label">Cajas Nacional</label>
+                  <input type="text" class="form-control" id="area" placeholder="" value="" required="">
 
-                <div class="col-12">
+                </div>
+                <div class="col-sm-2 form-group">
+                  <label for="cajas" class="form-label">Bolsas Nacional</label>
+                  <input type="text" class="form-control" id="cajas" placeholder="" value="" required="">
+
+                </div>
+
+                <div class="col-sm-2 form-group">
+                  <label for="empaca" class="form-label">Kilos Nacional</label>
+                  <input type="text" class="form-control" id="empaca" placeholder="" value="" required="">
+
+                </div>
+                <div class="col-sm-2 form-group">
+                  <label for="campo" class="form-label">Kilos a Personal</label>
+                  <input type="text" class="form-control" id="campo" placeholder="" value="" required="">
+
+                </div>
+                <div class="col-sm-2 form-group">
+                  <label for="mano" class="form-label">Kilos Fruta de Piso</label>
+                  <input type="text" class="form-control" id="mano" placeholder="" value="" required="">
+
+                </div>
+
+
+
+
+
+                <!-- <div class="col-12">
                   <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
                   <input type="email" class="form-control" id="email" placeholder="you@example.com">
                   <div class="invalid-feedback">
@@ -422,7 +551,7 @@
                     Security code required
                   </div>
                 </div>
-              </div>
+              </div> -->
 
               <hr class="my-4">
 
