@@ -11,6 +11,7 @@
   <!-- <link rel="stylesheet" href="./css/style.css"> -->
   <link href="./css/carousel.css" rel="stylesheet">
   <link href="./css/carousel.rtl.css" rel="stylesheet">
+  <link href="./css/ventana.css" rel="stylesheet">
   <link rel="stylesheet" href="css/bootstrap.min.css">
 
   <title>Principal</title>
