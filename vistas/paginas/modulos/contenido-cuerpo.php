@@ -265,16 +265,16 @@
                     </div>
                     <div id="RacimosCortados" class="col-sm-2 form-group venEmergente">
 
-                      <input type="text" class="form-control" id="sm5" placeholder="Corte 5 semanas" value="" required="">
-                      <input type="text" class="form-control" id="sm6" placeholder="Corte 6 semanas" value="" required="">
-                      <input type="text" class="form-control" id="sm7" placeholder="Corte 7 semanas" value="" required="">
-                      <input type="text" class="form-control" id="sm8" placeholder="Corte 8 semanas" value="" required="">
-                      <input type="text" class="form-control" id="sm9" placeholder="Corte 9 semanas" value="" required="">
-                      <input type="text" class="form-control" id="sm10" placeholder="Corte 10 semanas" value="" required="">
-                      <input type="text" class="form-control" id="sm11" placeholder="Corte 11 semanas" value="" required="">
-                      <input type="text" class="form-control" id="sm12" placeholder="Corte 12 semanas" value="" required="">
-                      <input type="text" class="form-control" id="sm13" placeholder="Corte 13 semanas" value="" required="">
-                      <input type="text" class="form-control" id="rechazados" placeholder="Racimos Rechazados" value="" required="">
+                      <input type="text" class="form-control racimos" id="sm5" placeholder="Corte 5 semanas" value="" required="">
+                      <input type="text" class="form-control racimos" id="sm6" placeholder="Corte 6 semanas" value="" required="">
+                      <input type="text" class="form-control racimos" id="sm7" placeholder="Corte 7 semanas" value="" required="">
+                      <input type="text" class="form-control racimos" id="sm8" placeholder="Corte 8 semanas" value="" required="">
+                      <input type="text" class="form-control racimos" id="sm9" placeholder="Corte 9 semanas" value="" required="">
+                      <input type="text" class="form-control racimos" id="sm10" placeholder="Corte 10 semanas" value="" required="">
+                      <input type="text" class="form-control racimos" id="sm11" placeholder="Corte 11 semanas" value="" required="">
+                      <input type="text" class="form-control racimos" id="sm12" placeholder="Corte 12 semanas" value="" required="">
+                      <input type="text" class="form-control racimos" id="sm13" placeholder="Corte 13 semanas" value="" required="">
+                      <input type="text" class="form-control racimos" id="rechazados" placeholder="Racimos Rechazados" value="" required="">
 
                     </div>
                   </div>
@@ -290,15 +290,15 @@
                     </div>
                     <div id="RacimosRepicados" class="col-sm-2 form-group venEmergente">
 
-                      <input type="text" class="form-control" id="sm5" placeholder="Corte 5 semanas" value="" required="">
-                      <input type="text" class="form-control" id="sm6" placeholder="Corte 6 semanas" value="" required="">
-                      <input type="text" class="form-control" id="sm7" placeholder="Corte 7 semanas" value="" required="">
-                      <input type="text" class="form-control" id="sm8" placeholder="Corte 8 semanas" value="" required="">
-                      <input type="text" class="form-control" id="sm9" placeholder="Corte 9 semanas" value="" required="">
-                      <input type="text" class="form-control" id="sm10" placeholder="Corte 10 semanas" value="" required="">
-                      <input type="text" class="form-control" id="sm11" placeholder="Corte 11 semanas" value="" required="">
-                      <input type="text" class="form-control" id="sm12" placeholder="Corte 12 semanas" value="" required="">
-                      <input type="text" class="form-control" id="sm13" placeholder="Corte 13 semanas" value="" required="">
+                      <input type="text" class="form-control repicados" id="Rsm5" placeholder="Corte 5 semanas" value="" required="">
+                      <input type="text" class="form-control repicados" id="Rsm6" placeholder="Corte 6 semanas" value="" required="">
+                      <input type="text" class="form-control repicados" id="Rsm7" placeholder="Corte 7 semanas" value="" required="">
+                      <input type="text" class="form-control repicados" id="Rsm8" placeholder="Corte 8 semanas" value="" required="">
+                      <input type="text" class="form-control repicados" id="Rsm9" placeholder="Corte 9 semanas" value="" required="">
+                      <input type="text" class="form-control repicados" id="Rsm10" placeholder="Corte 10 semanas" value="" required="">
+                      <input type="text" class="form-control repicados" id="Rsm11" placeholder="Corte 11 semanas" value="" required="">
+                      <input type="text" class="form-control repicados" id="Rsm12" placeholder="Corte 12 semanas" value="" required="">
+                      <input type="text" class="form-control repicados" id="Rsm13" placeholder="Corte 13 semanas" value="" required="">
 
 
                     </div>
@@ -310,16 +310,16 @@
 
                   <div class="col-sm-6 form-group">
 
-                    <label for="fincas">Defecto 1</label>
+                    <label for="defecto1">Defecto 1</label>
                     <div class="input-group">
 
-                      <select class="form-control mb-3" id="fincas">
-                        <option value="MN">Cicatriz Manejo</option>
-                        <option value="MD">Desgarre</option>
-                        <option value="SH">Malformado</option>
-                        <option value="CO">Latex Viejo</option>
-                        <option value="GA">Bajo Grado</option>
-                        <option value="CU">Sobre Grado</option>
+                      <select class="form-control mb-3" id="defecto1">
+                        <option value="108">Cicatriz Manejo</option>
+                        <option value="214">Desgarre</option>
+                        <option value="401">Malformado</option>
+                        <option value="106">Latex Viejo</option>
+                        <option value="502">Bajo Grado</option>
+                        <option value="210">Sobre Grado</option>
                       </select>
                       <input class="form-control mb-3" type="text">
                       <span class=""> % </span>
@@ -327,17 +327,17 @@
                   </div>
                   <div class="col-sm-6 form-group">
 
-                    <label for="fincas">Defecto 2</label>
+                    <label for="defecto2">Defecto 2</label>
                     <div class="input-group">
 
-                      <select class="form-control mb-3" id="fincas">
-                        <option value="MN">Cicatriz Manejo</option>
-                        <option value="MD">Desgarre</option>
-                        <option value="SH">Malformado</option>
-                        <option value="CO">Latex Viejo</option>
-                        <option value="GA">Bajo Grado</option>
-                        <option value="GA">Bacteriosis</option>
-                        <option value="CU">Sobre Grado</option>
+                      <select class="form-control mb-3" id="defecto2">
+                        <option value="108">Cicatriz Manejo</option>
+                        <option value="214">Desgarre</option>
+                        <option value="401">Malformado</option>
+                        <option value="106">Latex Viejo</option>
+                        <option value="502">Bajo Grado</option>
+                        <option value="320">Bacteriosis</option>
+                        <option value="210">Sobre Grado</option>
                       </select>
                       <input class="form-control mb-3" type="text">
                       <span class=""> % </span>
@@ -345,16 +345,16 @@
                   </div>
                   <div class="col-sm-6 form-group">
 
-                    <label for="fincas">Defecto 3</label>
+                    <label for="defecto3">Defecto 3</label>
                     <div class="input-group">
 
-                      <select class="form-control mb-3" id="fincas">
-                        <option value="MN">Cicatriz Manejo</option>
-                        <option value="MD">Desgarre</option>
-                        <option value="SH">Malformado</option>
-                        <option value="CO">Latex Viejo</option>
-                        <option value="GA">Bajo Grado</option>
-                        <option value="CU">Sobre Grado</option>
+                      <select class="form-control mb-3" id="defecto3">
+                        <option value="108">Cicatriz Manejo</option>
+                        <option value="214">Desgarre</option>
+                        <option value="401">Malformado</option>
+                        <option value="106">Latex Viejo</option>
+                        <option value="502">Bajo Grado</option>
+                        <option value="210">Sobre Grado</option>
                       </select>
                       <input class="form-control mb-3" type="text">
                       <span class=""> % </span>
@@ -380,6 +380,7 @@
                       <table id="tabla" class="table table-bordered">
                         <thead>
                           <tr>
+                            <!-- <th>#</th> -->
                             <th>Codigo</th>
                             <th>Fruta</th>
                             <th>Cantidad</th>
@@ -388,10 +389,11 @@
                         </thead>
                         <tbody>
                           <tr>
+                            <!-- <td><input type="text" class="form-control" id="fila" placeholder="" value="1" disabled></td> -->
                             <td><input type="text" class="form-control" id="cod" placeholder="" value="" required></td>
-                            <td><input type="text" class="form-control" id="sm1" placeholder="" value="" disabled></td>
-                            <td><input type="text" class="form-control" id="sm2" placeholder="" value="" required=""></td>
-                            <td><input type="text" class="form-control" id="sm3" placeholder="" value="" required=""></td>
+                            <td><input type="text" class="form-control" id="fruta" placeholder="" value="" disabled></td>
+                            <td><input type="text" class="form-control" id="cantidad" placeholder="" value="" required=""></td>
+                            <td><input type="text" class="form-control" id="rechazo" placeholder="" value="" required=""></td>
                           </tr>
                           
                       </table>
@@ -406,28 +408,28 @@
 
                 <div class="col-sm-2 form-group">
                   <label for="area" class="form-label">Cajas Nacional</label>
-                  <input type="text" class="form-control" id="area" placeholder="" value="" required="">
+                  <input type="text" class="form-control" id="cjsnal" placeholder="" value="" required="">
 
                 </div>
                 <div class="col-sm-2 form-group">
                   <label for="cajas" class="form-label">Bolsas Nacional</label>
-                  <input type="text" class="form-control" id="cajas" placeholder="" value="" required="">
+                  <input type="text" class="form-control" id="bolnacional" placeholder="" value="" required="">
 
                 </div>
 
                 <div class="col-sm-2 form-group">
                   <label for="empaca" class="form-label">Kilos Nacional</label>
-                  <input type="text" class="form-control" id="empaca" placeholder="" value="" required="">
+                  <input type="text" class="form-control" id="klsnacional" placeholder="" value="" required="">
 
                 </div>
                 <div class="col-sm-2 form-group">
                   <label for="campo" class="form-label">Kilos a Personal</label>
-                  <input type="text" class="form-control" id="campo" placeholder="" value="" required="">
+                  <input type="text" class="form-control" id="klspersonal" placeholder="" value="" required="">
 
                 </div>
                 <div class="col-sm-2 form-group">
                   <label for="mano" class="form-label">Kilos Fruta de Piso</label>
-                  <input type="text" class="form-control" id="mano" placeholder="" value="" required="">
+                  <input type="text" class="form-control" id="klsfrpiso" placeholder="" value="" required="">
 
                 </div>
 
@@ -435,127 +437,10 @@
 
 
 
-                <!-- <div class="col-12">
-                  <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
-                  <input type="email" class="form-control" id="email" placeholder="you@example.com">
-                  <div class="invalid-feedback">
-                    Please enter a valid email address for shipping updates.
-                  </div>
-                </div>
-
-                <div class="col-12">
-                  <label for="address" class="form-label">Address</label>
-                  <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
-                  <div class="invalid-feedback">
-                    Please enter your shipping address.
-                  </div>
-                </div>
-
-                <div class="col-12">
-                  <label for="address2" class="form-label">Address 2 <span class="text-muted">(Optional)</span></label>
-                  <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
-                </div>
-
-                <div class="col-md-5">
-                  <label for="country" class="form-label">Country</label>
-                  <select class="form-select" id="country" required="">
-                    <option value="">Choose...</option>
-                    <option>United States</option>
-                  </select>
-                  <div class="invalid-feedback">
-                    Please select a valid country.
-                  </div>
-                </div>
-
-                <div class="col-md-4">
-                  <label for="state" class="form-label">State</label>
-                  <select class="form-select" id="state" required="">
-                    <option value="">Choose...</option>
-                    <option>California</option>
-                  </select>
-                  <div class="invalid-feedback">
-                    Please provide a valid state.
-                  </div>
-                </div>
-
-                <div class="col-md-3">
-                  <label for="zip" class="form-label">Zip</label>
-                  <input type="text" class="form-control" id="zip" placeholder="" required="">
-                  <div class="invalid-feedback">
-                    Zip code required.
-                  </div>
-                </div>
-              </div>
 
               <hr class="my-4">
 
-              <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="same-address">
-                <label class="form-check-label" for="same-address">Shipping address is the same as my billing address</label>
-              </div>
-
-              <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="save-info">
-                <label class="form-check-label" for="save-info">Save this information for next time</label>
-              </div>
-
-              <hr class="my-4">
-
-              <h4 class="mb-3">Payment</h4>
-
-              <div class="my-3">
-                <div class="form-check">
-                  <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked="" required="">
-                  <label class="form-check-label" for="credit">Credit card</label>
-                </div>
-                <div class="form-check">
-                  <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required="">
-                  <label class="form-check-label" for="debit">Debit card</label>
-                </div>
-                <div class="form-check">
-                  <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required="">
-                  <label class="form-check-label" for="paypal">PayPal</label>
-                </div>
-              </div>
-
-              <div class="row gy-3">
-                <div class="col-md-6">
-                  <label for="cc-name" class="form-label">Name on card</label>
-                  <input type="text" class="form-control" id="cc-name" placeholder="" required="">
-                  <small class="text-muted">Full name as displayed on card</small>
-                  <div class="invalid-feedback">
-                    Name on card is required
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <label for="cc-number" class="form-label">Credit card number</label>
-                  <input type="text" class="form-control" id="cc-number" placeholder="" required="">
-                  <div class="invalid-feedback">
-                    Credit card number is required
-                  </div>
-                </div>
-
-                <div class="col-md-3">
-                  <label for="cc-expiration" class="form-label">Expiration</label>
-                  <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
-                  <div class="invalid-feedback">
-                    Expiration date required
-                  </div>
-                </div>
-
-                <div class="col-md-3">
-                  <label for="cc-cvv" class="form-label">CVV</label>
-                  <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
-                  <div class="invalid-feedback">
-                    Security code required
-                  </div>
-                </div>
-              </div> -->
-
-              <hr class="my-4">
-
-              <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
+              <button class="w-50 btn btn-primary btn-lg" id="enviarterminacion" type="button">Registrar Terminacion</button>
             </form>
           </div>
         </div>
