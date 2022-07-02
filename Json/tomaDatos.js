@@ -17,10 +17,10 @@ botonEnviar.addEventListener('click', function (e) {
     // console.log(ArrayRacimosCortados);
     // console.log(ArrayRacimosRepicados);
 
-    var vTabla = document.getElementById('tabla'),
-    valueTabla = [].map.call(vTabla, function (input3) {
-        ArrayTabla.push(input3.value);
-    });
+    var vTabla = document.getElementsByClassName('table'),
+        valueTabla = [].map.call(vTabla, function (input3) {
+            ArrayTabla.push(input3.value);
+        });
 
 
 });

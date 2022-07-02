@@ -380,7 +380,7 @@
                       <table id="tabla" class="table table-bordered">
                         <thead>
                           <tr>
-                            <!-- <th>#</th> -->
+                            <th>#</th>
                             <th>Codigo</th>
                             <th>Fruta</th>
                             <th>Cantidad</th>
@@ -389,7 +389,7 @@
                         </thead>
                         <tbody>
                           <tr>
-                            <!-- <td><input type="text" class="form-control" id="fila" placeholder="" value="1" disabled></td> -->
+                            <td><input type="text" class="form-control" id="fila" placeholder="" value="1" disabled></td>
                             <td><input type="text" class="form-control" id="cod" placeholder="" value="" required></td>
                             <td><input type="text" class="form-control" id="fruta" placeholder="" value="" disabled></td>
                             <td><input type="text" class="form-control" id="cantidad" placeholder="" value="" required=""></td>
