@@ -17,7 +17,7 @@ botonEnviar.addEventListener('click', function (e) {
     // console.log(ArrayRacimosCortados);
     // console.log(ArrayRacimosRepicados);
 
-    var vTabla = document.getElementsByClassName('table'),
+    var vTabla = document.getElementsByClassName('datosTabla'),
         valueTabla = [].map.call(vTabla, function (input3) {
             ArrayTabla.push(input3.value);
         });
