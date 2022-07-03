@@ -17,13 +17,22 @@ botonEnviar.addEventListener('click', function (e) {
     // console.log(ArrayRacimosCortados);
     // console.log(ArrayRacimosRepicados);
 
-    var vTabla = document.getElementsByClassName('table'),
-        valueTabla = [].map.call(vTabla, function (input3) {
-            ArrayTabla.push(input3.value);
+    var vTabla = document.getElementsByTagName("td");
+        //recorred td de tabla
+        for (var i = 0; i < vTabla.length; i++) {
+            
+
+
+            
+            console.log(vTabla[i].firstChild.value);
+        }
+        
+        // valueTabla = [].map.call(vTabla, function (input3) {
+        //     ArrayTabla.push(input3.value);
         });
 
 
-});
+
 
 
 
