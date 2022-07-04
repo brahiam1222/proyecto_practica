@@ -14,21 +14,41 @@ botonEnviar.addEventListener('click', function (e) {
             ArrayRacimosRepicados.push(input2.value);
         });
 
+        //leer dato de tabla y guardarlo en json
+        var tabla = document.getElementById('tabla');
+        var filas = tabla.getElementsByTagName('tr');
+        for (var i = 1; i < filas.length; i++) {
+            var celdas = filas[i].getElementsByTagName('td');
+            var fila = {
+                "fila": celdas[0].firstChild.value,
+                "Cod": celdas[1].firstChild.value,
+                "Fruta": celdas[2].firstChild.value,
+                "Cjs": celdas[3].firstChild.value,
+                "CjsRechazadas": celdas[4].firstChild.value
+            };
+            ArrayTabla.push(fila);
+        }
+        console.log(ArrayTabla);
+        
+
     // console.log(ArrayRacimosCortados);
     // console.log(ArrayRacimosRepicados);
 
-    var vTabla = document.getElementById('tabla');
-    console.log(vTabla);
-    // var vTabla = document.getElementsByTagName("td");
-        //recorred td de tabla
-        for (var i = 0; i < vTabla.length; i++) {
+    // var vTabla = document.getElementById('tabla');
+    // var vTd = document.getElementsByTagName('td');
+    // var vTr = document.getElementsByTagName('tr');
+    
+    // console.log(vTd);
+    // // var vTabla = document.getElementsByTagName("td");
+    //     //recorred td de tabla
+    //     for (var i = 0; i < vTr.length; i++) {
             
 
 
             
-            console.log(vTabla[i].firstChild.value);
-            ArrayTabla.push(vTabla[i].firstChild.value);
-        }
+    //         console.log(vTabla[i].firstChild.value);
+    //         ArrayTabla.push(vTabla[i].firstChild.value);
+    //     }
         
         // valueTabla = [].map.call(vTabla, function (input3) {
         //     ArrayTabla.push(input3.value);
@@ -66,7 +86,7 @@ function guardarTerminacion() {
         klsPersonal = document.getElementById('klspersonal').value,
         klsFrPiso = document.getElementById('klsfrpiso').value;
 
-    terminacionDiaria();
+    terminacionDiaria( finca, aRecorrida, cjsEstimadas, pEmpaca, pCampo, cMano, ArrayRacimosCortados, ArrayRacimosRepicados, defecto1, defecto2, defecto3, ArrayTabla, cjsNal, bolNacional, klsNacional, klsPersonal, klsFrPiso);
 
 
 

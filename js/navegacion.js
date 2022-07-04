@@ -91,11 +91,11 @@ function insertaFila() {
     let cell4 = row.insertCell(3);
     let cell5 = row.insertCell(4);
 
-    cell1.innerHTML = "<input type='text' class='form-control datosTabla' id="+"fila"+conta+" placeholder='' value="+conta+" disabled>";
-    cell2.innerHTML = "<input type='text' class='form-control datosTabla' id='cod' placeholder='' value='' required>";
-    cell3.innerHTML = "<input type='text' class='form-control datosTabla' id='sm1' placeholder='' value'' disabled>";
-    cell4.innerHTML = "<input type='text' class='form-control datosTabla' id='sm2' placeholder='' value'' required=''>";
-    cell5.innerHTML = "<input type='text' class='form-control datosTabla' id='sm3' placeholder='' value'' required=''>";
+    cell1.innerHTML = "<input type='text' class='form-control datosTabla' id='' placeholder='' value="+conta+" disabled>";
+    cell2.innerHTML = "<input type='text' class='form-control datosTabla' id='' placeholder='' value='' required>";
+    cell3.innerHTML = "<input type='text' class='form-control datosTabla' id='' placeholder='' value'' disabled>";
+    cell4.innerHTML = "<input type='text' class='form-control datosTabla' id='' placeholder='' value'' required=''>";
+    cell5.innerHTML = "<input type='text' class='form-control datosTabla' id='' placeholder='' value'' required=''>";
 
 
     // const tabla = document.getElementById('tabla').insertRow();

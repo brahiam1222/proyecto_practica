@@ -389,11 +389,11 @@
                         </thead>
                         <tbody>
                           <tr>
-                            <td><input type="text" class="form-control datosTabla" id="fila1" placeholder="" value="1" disabled></td>
-                            <td><input type="text" class="form-control datosTabla" id="cod" placeholder="" value="" required></td>
-                            <td><input type="text" class="form-control datosTabla" id="fruta" placeholder="" value="" disabled></td>
-                            <td><input type="text" class="form-control datosTabla" id="cantidad" placeholder="" value="" required=""></td>
-                            <td><input type="text" class="form-control datosTabla" id="rechazo" placeholder="" value="" required=""></td>
+                            <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="1" disabled></td>
+                            <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="" required></td>
+                            <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="" disabled></td>
+                            <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="" required=""></td>
+                            <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="" required=""></td>
                           </tr>
                           
                       </table>
