@@ -17,7 +17,9 @@ botonEnviar.addEventListener('click', function (e) {
     // console.log(ArrayRacimosCortados);
     // console.log(ArrayRacimosRepicados);
 
-    var vTabla = document.getElementsByTagName("td");
+    var vTabla = document.getElementById('tabla');
+    console.log(vTabla);
+    // var vTabla = document.getElementsByTagName("td");
         //recorred td de tabla
         for (var i = 0; i < vTabla.length; i++) {
             
@@ -25,6 +27,7 @@ botonEnviar.addEventListener('click', function (e) {
 
             
             console.log(vTabla[i].firstChild.value);
+            ArrayTabla.push(vTabla[i].firstChild.value);
         }
         
         // valueTabla = [].map.call(vTabla, function (input3) {
