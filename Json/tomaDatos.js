@@ -2,6 +2,7 @@ const botonEnviar = document.getElementById('enviarterminacion');
 var ArrayRacimosCortados = new Array();
 var ArrayRacimosRepicados = new Array();
 var ArrayTabla = new Array();
+var ArrayDefectos = new Array();
 
 botonEnviar.addEventListener('click', function (e) {
     var rCortados = document.getElementsByClassName('racimos'),
@@ -13,6 +14,16 @@ botonEnviar.addEventListener('click', function (e) {
         valueRacimosRepicados = [].map.call(rRepicados, function (input2) {
             ArrayRacimosRepicados.push(input2.value);
         });
+
+        // var defectos = document.getElementsByClassName('defecto1'),
+        // valueDefectos = [].map.call(defectos, function (input3) {
+        //     ArrayDefectos.push(input3.value);
+        // });
+        // console.log(ArrayDefectos);
+        // console.log(defectos);
+        // tomar el valor de los defectos
+
+
 
         //leer dato de tabla y guardarlo en json
         var tabla = document.getElementById('tabla');
@@ -28,7 +39,7 @@ botonEnviar.addEventListener('click', function (e) {
             };
             ArrayTabla.push(fila);
         }
-        console.log(ArrayTabla);
+        
         
 
     // console.log(ArrayRacimosCortados);
@@ -87,7 +98,7 @@ function guardarTerminacion() {
         klsFrPiso = document.getElementById('klsfrpiso').value;
 
     terminacionDiaria( finca, aRecorrida, cjsEstimadas, pEmpaca, pCampo, cMano, ArrayRacimosCortados, ArrayRacimosRepicados, defecto1, defecto2, defecto3, ArrayTabla, cjsNal, bolNacional, klsNacional, klsPersonal, klsFrPiso);
-
+    
 
 
 
