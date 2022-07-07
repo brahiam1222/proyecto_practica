@@ -264,6 +264,12 @@
 
                     </div>
                     <div id="RacimosCortados" class="col-sm-2 form-group venEmergente">
+                      <div id="Ventana">
+
+                      
+                      <button id="btnClose" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
 
                       <input type="text" class="form-control racimos" id="sm5" placeholder="Corte 5 semanas" value="" required="">
                       <input type="text" class="form-control racimos" id="sm6" placeholder="Corte 6 semanas" value="" required="">
@@ -275,6 +281,7 @@
                       <input type="text" class="form-control racimos" id="sm12" placeholder="Corte 12 semanas" value="" required="">
                       <input type="text" class="form-control racimos" id="sm13" placeholder="Corte 13 semanas" value="" required="">
                       <input type="text" class="form-control racimos" id="rechazados" placeholder="Racimos Rechazados" value="" required="">
+                      </div>
 
                     </div>
                   </div>
