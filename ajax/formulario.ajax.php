@@ -10,6 +10,7 @@ class AjaxFormularios
 
 
     public $validarEmail;
+    public $validarTerminacion;
 
     public function ajaxValidarEmail()
     {
@@ -20,10 +21,27 @@ class AjaxFormularios
         $respuesta = ControladorFormulario::ctrSeleccionarUsuario($item, $valor);
         echo json_encode($respuesta);
     }
+
+    //recibir datos json
+    public function ajaxTerminacion()
+    {
+        $item = "terminacion";
+        $valor = $this->validarTerminacion;
+        $enviado = ControladorFormulario::ctrIngresarTerminacion($item, $valor);
+        echo json_encode($enviado);
+    }
+
+
+
 }
 
 
+if (isset($_POST["jsonTerminacion"])) {
 
+    $jsTerminacion = new AjaxFormularios();
+    $jsTerminacion->validarTerminacion = $_POST["jsonTerminacion"];
+    $jsTerminacion->ajaxTerminacion();
+}
 
 
 

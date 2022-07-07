@@ -49,6 +49,17 @@ class ControladorFormulario
         return $respuesta;
     }
 
+    // guardar datos en la base de datos
+    static public function ctrIngresarTerminacion($item, $valor)
+    {
+            
+            $tabla = "terminacion";
+    
+            $enviado = ModeloFormulario::mdlIngresarTerminacion($tabla, $item, $valor);
+    
+            return $enviado;
+    }
+
 
 
     public function ctrLogin()

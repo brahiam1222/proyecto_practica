@@ -34,6 +34,27 @@ class ModeloFormulario
             $stmt = null;
         }
     }
+    //ingresar datos en la base de datos
+    static public function mdlIngresarTerminacion($tabla, $item, $valor)
+    {
+        //decodificar json
+
+        $terminacion_ = json_decode($valor, true);
+        // foreach ($terminacion_ as $terminacion) {
+        //     $terminacion = $v;
+        // }
+        
+
+        $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla VALUES ");
+        $stmt->bindParam(":terminacion", $valor, PDO::PARAM_STR);
+        if ($stmt->execute()) {
+            return "ok";
+        } else {
+            return "error";
+        }
+        // $stmt->close();
+        $stmt = null;
+    }
 
 
     static public function mdlSeleccionarUsuario($tabla, $item, $valor)
