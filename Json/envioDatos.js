@@ -123,18 +123,31 @@ function terminacionDiaria(finca, aRecorrida, cjsEstimadas, pEmpaca, pCampo, cMa
         var datos = new FormData();
         datos.append("jsonTerminacion", jsonTerminacion);
 
-    $.ajax({
-        url: "./ajax/formulario.ajax.php",
-        method: "POST",
-        data: datos,
-        cache: false,
-        contentType: false,
-        processData: false,
-        dataType: "json",
-        success: function (enviado) {
-            console.log(enviado);
-        }
-    });
+
+
+    
+
+
+
+
+//     $.ajax({
+//         url: "./ajax/formulario.ajax.php",
+//         method: "POST",
+//         data: datos,
+//         cache: false,
+//         contentType: false,
+//         processData: false,
+//         dataType: "json",
+//         success: function (enviado) {
+//          if (enviado) {
+//             console.log("enviado");
+//         }else{
+//             console.log("no enviado");
+            
+//         }
+//         console.log(url);
+//     }
+// });
 
 
         // $decode = json_encode(jsonTerminacion);
@@ -146,7 +159,7 @@ function terminacionDiaria(finca, aRecorrida, cjsEstimadas, pEmpaca, pCampo, cMa
     
     //decodificar json
     
-     console.log(jsonTerminacion.ArrayTabla);
+    //  console.log(jsonTerminacion.ArrayTabla);
 
 
 

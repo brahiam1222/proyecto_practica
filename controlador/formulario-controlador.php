@@ -50,14 +50,15 @@ class ControladorFormulario
     }
 
     // guardar datos en la base de datos
-    static public function ctrIngresarTerminacion($item, $valor)
+    static public function ctrIngresarTerminacion($valor)
     {
             
             $tabla = "terminacion";
     
-            $enviado = ModeloFormulario::mdlIngresarTerminacion($tabla, $item, $valor);
+            $enviado = ModeloFormulario::mdlIngresarTerminacion($tabla, $valor);
     
             return $enviado;
+            echo ($enviado);
     }
 
 

@@ -25,9 +25,9 @@ class AjaxFormularios
     //recibir datos json
     public function ajaxTerminacion()
     {
-        $item = "terminacion";
+        
         $valor = $this->validarTerminacion;
-        $enviado = ControladorFormulario::ctrIngresarTerminacion($item, $valor);
+        $enviado = ControladorFormulario::ctrIngresarTerminacion($valor);
         echo json_encode($enviado);
     }
 

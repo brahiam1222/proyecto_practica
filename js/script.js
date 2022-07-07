@@ -33,6 +33,7 @@ registro.addEventListener('keyup', (e) => {
                 }
 
 
+                console.log(respuesta);
             }
         });
     }
