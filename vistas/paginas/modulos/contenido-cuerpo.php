@@ -321,7 +321,7 @@
                         <option value="502">Bajo Grado</option>
                         <option value="210">Sobre Grado</option>
                       </select>
-                      <input class="form-control mb-3" type="text">
+                      <input class="form-control mb-3" id="valDefecto1" type="text">
                       <span class=""> % </span>
                     </div>
                   </div>
@@ -339,7 +339,7 @@
                         <option value="320">Bacteriosis</option>
                         <option value="210">Sobre Grado</option>
                       </select>
-                      <input class="form-control mb-3" type="text">
+                      <input class="form-control mb-3" id="valDefecto2"  type="text">
                       <span class=""> % </span>
                     </div>
                   </div>
@@ -356,7 +356,7 @@
                         <option value="502">Bajo Grado</option>
                         <option value="210">Sobre Grado</option>
                       </select>
-                      <input class="form-control mb-3" type="text">
+                      <input class="form-control mb-3" id="valDefecto3"  type="text">
                       <span class=""> % </span>
                     </div>
                   </div>
