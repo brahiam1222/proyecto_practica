@@ -40,12 +40,12 @@ class ModeloFormulario
         //decodificar json
 
         $terminacion_ = json_decode($valor, true);
-        // foreach ($terminacion_ as $terminacion) {
-        //     $terminacion = $v;
-        // }
+        foreach ($terminacion_ as $terminacion) {
+            $terminacion->{"finca"};
+        }
         
 
-        $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla VALUES ");
+        $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (`id`, `finca`, `aRecorrida`, `cjsEstimadas`, `c5sm`, `r5sm`, `defecto1`, `valdefecto1`, `blsNacional`, `fruta`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]','[value-9]','[value-10]') ");
         $stmt->bindParam(":terminacion", $valor, PDO::PARAM_STR);
         if ($stmt->execute()) {
             return "ok";

@@ -110,12 +110,13 @@ function terminacionDiaria(finca, aRecorrida, cjsEstimadas, pEmpaca, pCampo, cMa
 
     };
 
-    // terminacionList.push(terminacionDiaria);
+    terminacionList.push(nuevaTerminacion);
     // console.log(nuevaTerminacion);
 
     //guardar datos a json
 
     var jsonTerminacion = JSON.stringify(nuevaTerminacion);
+    var jsonTerminacion = JSON.parse(jsonTerminacion);
     // __ajax("./ajax/formulario.ajax.php", { "json": json });
     // console.log(__ajax);
     
@@ -144,9 +145,8 @@ function terminacionDiaria(finca, aRecorrida, cjsEstimadas, pEmpaca, pCampo, cMa
     
     
     //decodificar json
-    var jsonTerminacion = JSON.parse(jsonTerminacion);
     
-     console.log(jsonTerminacion.RacimosCortados);
+     console.log(jsonTerminacion.ArrayTabla);
 
 
 
