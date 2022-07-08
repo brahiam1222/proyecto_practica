@@ -3,6 +3,18 @@
 require_once "../controlador/formulario-controlador.php";
 require_once "../modelo/formulario-modelo.php";
 
+//mostrar los datos de la base de datos en formato json
+
+
+
+    // $prueba = $_POST["listarTerminacion"];
+    // var_dump($prueba);
+
+
+
+// $tabla = "terminacion";
+// $respuesta = ModeloFormulario::mdlMostrarTerminacion($tabla);
+
 
 class AjaxFormularios
 {
@@ -11,6 +23,8 @@ class AjaxFormularios
 
     public $validarEmail;
     public $validarTerminacion;
+    public $saveTerminacion;
+    
 
     public function ajaxValidarEmail()
     {
@@ -21,26 +35,42 @@ class AjaxFormularios
         $respuesta = ControladorFormulario::ctrSeleccionarUsuario($item, $valor);
         echo json_encode($respuesta);
     }
+    public function ajaxGuardarTerminacion()
+    {
+
+        $tabla = "terminacion";
+        $valor = $this->saveTerminacion;
+
+        $enviado = ControladorFormulario::ctrIngresarTerminacion($tabla, $valor);
+        
+        
+        echo json_encode($enviado);
+        
+    }
 
     //recibir datos json
     public function ajaxTerminacion()
     {
-        
-        $valor = $this->validarTerminacion;
-        $enviado = ControladorFormulario::ctrIngresarTerminacion($valor);
+        $tabla = "terminacion";
+        // $valor = $this->validarTerminacion;
+        $enviado = ControladorFormulario::ctrMostrarTerminacion($tabla);
         echo json_encode($enviado);
+        
     }
-
-
-
 }
 
 
-if (isset($_POST["jsonTerminacion"])) {
+if (isset($_POST["listarTerminacion"])) {
 
-    $jsTerminacion = new AjaxFormularios();
-    $jsTerminacion->validarTerminacion = $_POST["jsonTerminacion"];
-    $jsTerminacion->ajaxTerminacion();
+    $listar = new AjaxFormularios();
+    $listar->validarTerminacion = $_POST["listarTerminacion"];
+    $listar->ajaxTerminacion();
+}
+if (isset($_POST["guardarTerminacion"])) {
+
+    $guardar = new AjaxFormularios();
+    $guardar->saveTerminacion = $_POST["guardarTerminacion"];
+    $guardar->ajaxGuardarTerminacion();
 }
 
 

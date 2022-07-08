@@ -34,36 +34,37 @@ class ModeloFormulario
             $stmt = null;
         }
     }
+
+    //mostrar terminacion
+    static public function mdlMostrarTerminacion($tabla)
+    {
+        $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
+        $stmt->execute();
+        return $stmt->fetchAll();
+        // $stmt->close();
+        $stmt = null;
+    }
     //ingresar datos en la base de datos
     static public function mdlIngresarTerminacion($tabla, $valor)
-    {
-        //decodificar json
+    {   
 
-        $terminacion_ = json_decode($valor, true);
-        foreach ($terminacion_ as $terminacion) {
-
-            $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (`finca`, `aRecorrida`, `cjsEstimadas`, `c5sm`, `r5sm`, `defecto1`, `valdefecto1`, `blsNacional`, `fruta`) 
-        VALUES (':finca','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]','[value-9]','[value-10]') ");
-            $stmt->bindParam(":finca", $terminacion["finca"], PDO::PARAM_STR);
-            $stmt->bindParam(":aRecorrida", $terminacion["aRecorrida"], PDO::PARAM_STR);
-            $stmt->bindParam(":cjsEstimadas", $terminacion["cjsEstimadas"], PDO::PARAM_STR);
-            $stmt->bindParam(":c5sm", $terminacion["c5sm"], PDO::PARAM_STR);
-            $stmt->bindParam(":r5sm", $terminacion["r5sm"], PDO::PARAM_STR);
-            $stmt->bindParam(":defecto1", $terminacion["defecto1"], PDO::PARAM_STR);
-            $stmt->bindParam(":valdefecto1", $terminacion["valdefecto1"], PDO::PARAM_STR);
-            $stmt->bindParam(":blsNacional", $terminacion["blsNacional"], PDO::PARAM_STR);
-            $stmt->bindParam(":fruta", $terminacion["fruta"], PDO::PARAM_STR);
-            $stmt->execute();
-        }
+        $stmt = Conexion::conectar()->prepare("INSERT INTO `terminacion` (`id`, `finca`, `aRecorrida`, `cjsEstimadas`, `c5sm`, `r5sm`, `defecto1`, `valdefecto1`, `blsNacional`, `fruta`) VALUES (NULL, \'SH\', \'12\', \'216\', \'100\', \'3\', \'216\', \'12\', \'80\', NULL);");
         
         if ($stmt->execute()) {
             return "ok";
         } else {
             return "error";
         }
-    
         // $stmt->close();
         $stmt = null;
+        
+
+
+        // $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
+        // $stmt->execute();
+        // return $stmt->fetchAll();
+        // // $stmt->close();
+        // $stmt = null;
 }
 
 
