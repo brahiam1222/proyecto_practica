@@ -67,7 +67,7 @@ if (isset($_POST["listarTerminacion"])) {
 if (isset($_POST["guardarTerminacion"])) {
 
     $guardar = new AjaxFormularios();
-    $guardar->saveTerminacion = json_encode( $_POST["guardarTerminacion"]);
+    $guardar->saveTerminacion = json_decode( $_POST["guardarTerminacion"]); // Estaba en encode
     $guardar->ajaxGuardarTerminacion();
 }
 

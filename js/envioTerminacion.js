@@ -138,7 +138,7 @@ botonEnviar.addEventListener('click', function (e) {
 
         });
         var jsDataTerminacion = { "data": data };
-        return data;
+        return data //jsData--;
     }
 
 
@@ -146,14 +146,14 @@ botonEnviar.addEventListener('click', function (e) {
 
     function guardar() {
          datos = new FormData();
-         datos.append("guardarTerminacion", JSON.stringify(datosTerminacion()));
+         datos.append("guardarTerminacion", datosTerminacion()); //Json Stringfy
         //  console.log(datos);
         //  var guardarJSON = JSON.stringify(datosTerminacion());
 
         __ajax("./ajax/formulario.ajax.php", datos)
             .done(function (enviado) {
-                  console.log(enviado[0]);
-                  console.log(enviado[0]["ArrayTabla"][0]["fila"]);
+                //   console.log(enviado[0]);
+                //   console.log(enviado[0]["finca"]);
                 //    var terminacionList = datosTerminacion();
                 //   console.log(terminacionList);                
             }

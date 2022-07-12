@@ -57,26 +57,26 @@ class ModeloFormulario
         // print_r($valor);
         $array = json_decode($valor, true);
 
-        foreach ($array as $fila) {
-            $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (`id`, `finca`, `aRecorrida`, `cjsEstimadas`, `c5sm`, `r5sm`, `defecto1`, `valdefecto1`, `blsNacional`, `fruta`) 
-        VALUES (NULL, :finca,:aRecorrida, :cjsEstimadas, :c5sm, :r5sm, :defecto1, :valdefecto1, :blsNacional, NULL);");
-            $stmt->bindParam(":finca", $fila[0]["finca"], PDO::PARAM_STR);
-            $stmt->bindParam(":aRecorrida", $fila[0]["aRecorrida"], PDO::PARAM_INT);
-            $stmt->bindParam(":cjsEstimadas", $fila[0]["cjsEstimadas"], PDO::PARAM_INT);
-            $stmt->bindParam(":c5sm", $fila[0]["c5sm"], PDO::PARAM_INT);
-            $stmt->bindParam(":r5sm", $fila[0]["r5sm"], PDO::PARAM_INT);
-            $stmt->bindParam(":defecto1", $fila[0]["defecto1"], PDO::PARAM_STR);
-            $stmt->bindParam(":valdefecto1", $fila[0]["valdefecto1"], PDO::PARAM_STR);
-            $stmt->bindParam(":blsNacional", $fila[0]["blsNacional"], PDO::PARAM_STR);
+        // foreach ($array as $fila) {
+        //     $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (`id`, `finca`, `aRecorrida`, `cjsEstimadas`, `c5sm`, `r5sm`, `defecto1`, `valdefecto1`, `blsNacional`, `fruta`) 
+        // VALUES (NULL, :finca,:aRecorrida, :cjsEstimadas, :c5sm, :r5sm, :defecto1, :valdefecto1, :blsNacional, NULL);");
+        //     $stmt->bindParam(":finca", $fila[0]["finca"], PDO::PARAM_STR);
+        //     $stmt->bindParam(":aRecorrida", $fila[0]["aRecorrida"], PDO::PARAM_STR);
+        //     $stmt->bindParam(":cjsEstimadas", $fila[0]["cjsEstimadas"], PDO::PARAM_STR);
+        //     $stmt->bindParam(":c5sm", $fila[0]["c5sm"], PDO::PARAM_STR);
+        //     $stmt->bindParam(":r5sm", $fila[0]["r5sm"], PDO::PARAM_STR);
+        //     $stmt->bindParam(":defecto1", $fila[0]["defecto1"], PDO::PARAM_STR);
+        //     $stmt->bindParam(":valdefecto1", $fila[0]["valdefecto1"], PDO::PARAM_STR);
+        //     $stmt->bindParam(":blsNacional", $fila[0]["blsNacional"], PDO::PARAM_STR);
             
             
             
 
-            // $stmt->execute();
-        }
-        
-        // $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (`id`, `finca`, `aRecorrida`, `cjsEstimadas`, `c5sm`, `r5sm`, `defecto1`, `valdefecto1`, `blsNacional`, `fruta`) 
-        // VALUES (NULL, 'md', '400', '21', '33', '56', '108', '10', '216', NULL);");
+        //     // $stmt->execute();
+        // }
+            $arrayimpro = '{"a":1,"b":2,"c":3,"d":4,"e":5}';//pruebas
+         $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (`id`, `finca`, `aRecorrida`, `cjsEstimadas`, `c5sm`, `r5sm`, `defecto1`, `valdefecto1`, `blsNacional`, `fruta`) 
+         VALUES (NULL, '".$valor."', '400', '21', '33', '56', '108', '10', '216', NULL);");
         
         
         // foreach ($array as $fila) {
