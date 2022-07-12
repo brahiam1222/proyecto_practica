@@ -3,7 +3,7 @@ const botonEnviar = document.getElementById('enviarterminacion');
 botonEnviar.addEventListener('click', function (e) {
 
     $(function () {
-        listar();
+        // listar();
         guardar();
 
     });
@@ -143,52 +143,46 @@ botonEnviar.addEventListener('click', function (e) {
 
 
 
-        function guardar() {
-            
-            
-            variableEnvio = new FormData();
-            variableEnvio.append("guardarTerminacion", JSON.stringify(datosTerminacion()));
-            //  console.log(variableEnvio);
-            // var json = JSON.stringify(datosTerminacion());
-            __ajax("./ajax/formulario.ajax.php",variableEnvio)
-            .done(function(enviado){
+
+    function guardar() {
+        datos = new FormData();
+        datos.append("guardarTerminacion", JSON.stringify(datosTerminacion()));
+        // console.log(datos);
+
+        __ajax("./ajax/formulario.ajax.php", datos)
+            .done(function (enviado) {
                 console.log(enviado);
-                var enviado = JSON.parse(enviado);
-                if(enviado == "ok"){
-                    swal({
-                        title: "Terminación guardada correctamente",
-                        text: "",
-                        type: "success",
-                        confirmButtonText: "Cerrar",
-                        closeOnConfirm: false
-                    }, function(isConfirm) {
-                        if (isConfirm) {
-                            window.location = "terminacion";
-                        }
-                    });
-                }else{
-                    swal({
-                        title: "Error al guardar la terminación",
-                        text: "",
-                        type: "error",
-                        confirmButtonText: "Cerrar",
-                        closeOnConfirm: false
-                    }, function(isConfirm) {
-                        if (isConfirm) {
-                            window.location = "terminacion";
-                        }
-                    });
-                }
+                var terminacionList = JSON.stringify(enviado);
+                
+            }
+
+            );
+    }
+
+
+
+        // function guardar() {
+            
+            
+        //     datos = new FormData();
+        //     datos.append("guardarTerminacion", "");
+        //     //  console.log(variableEnvio);
+        //     // var json = JSON.stringify(datosTerminacion());
+        //     __ajax("./ajax/formulario.ajax.php", datos)
+        //     .done(function(enviado){
+        //         console.log(enviado);
+        //         var enviado = JSON.parse(enviado);
+               
 
             
-              });
+        //       });
 
-        }
+        // }
 
 
         function listar() {
             datos = new FormData();
-            datos.append("listarTerminacion", "listar");
+            datos.append("listarTerminacion", "");
             // console.log(datos);
 
             __ajax("./ajax/formulario.ajax.php", datos)

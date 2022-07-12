@@ -38,17 +38,22 @@ class ModeloFormulario
     //mostrar terminacion
     static public function mdlMostrarTerminacion($tabla)
     {
-        $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
-        $stmt->execute();
-        return $stmt->fetchAll();
+        $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (`id`, `finca`, `racimos`, `repiques`) VALUES (NULL, 'md', '2000', '30');");
+        
+        if ($stmt->execute()) {
+            return "ok";
+        } else {
+            return "error";
+        }
         // $stmt->close();
         $stmt = null;
+        
     }
     //ingresar datos en la base de datos
     static public function mdlIngresarTerminacion($tabla, $valor)
     {   
 
-        $stmt = Conexion::conectar()->prepare("INSERT INTO `terminacion` (`id`, `finca`, `aRecorrida`, `cjsEstimadas`, `c5sm`, `r5sm`, `defecto1`, `valdefecto1`, `blsNacional`, `fruta`) VALUES (NULL, \'SH\', \'12\', \'216\', \'100\', \'3\', \'216\', \'12\', \'80\', NULL);");
+        $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (`id`, `finca`, `racimos`, `repiques`) VALUES (NULL, 'mdaaSSS', '1', '2');");
         
         if ($stmt->execute()) {
             return "ok";

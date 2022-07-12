@@ -60,7 +60,7 @@ class ControladorFormulario
             return $respuesta;
             echo ($respuesta);
     }
-    static public function ctrIngresarTerminacion($tabla, $valor)
+    static public function ctrIngresarTerminacion($tabla ,$valor)
     {
             
             
