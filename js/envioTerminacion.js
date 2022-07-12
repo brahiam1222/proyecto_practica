@@ -145,15 +145,16 @@ botonEnviar.addEventListener('click', function (e) {
 
 
     function guardar() {
-        datos = new FormData();
-        datos.append("guardarTerminacion", JSON.stringify(datosTerminacion()));
-        // console.log(datos);
+         datos = new FormData();
+         datos.append("guardarTerminacion",JSON.stringify(datosTerminacion()));
+        //  console.log(datos);
+        //  var guardarJSON = JSON.stringify(datosTerminacion());
 
         __ajax("./ajax/formulario.ajax.php", datos)
             .done(function (enviado) {
-                console.log(enviado);
-                var terminacionList = JSON.stringify(enviado);
-                
+                  console.log(enviado);
+                  var terminacionList = datosTerminacion();
+                 console.log(terminacionList);                
             }
 
             );

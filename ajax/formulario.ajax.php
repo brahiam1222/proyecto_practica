@@ -61,7 +61,7 @@ class AjaxFormularios
 if (isset($_POST["listarTerminacion"])) {
 
     $listar = new AjaxFormularios();
-    $listar->validarTerminacion = $_POST["listarTerminacion"];
+    $listar->validarTerminacion = json_decode( $_POST["listarTerminacion"]);
     $listar->ajaxTerminacion();
 }
 if (isset($_POST["guardarTerminacion"])) {
