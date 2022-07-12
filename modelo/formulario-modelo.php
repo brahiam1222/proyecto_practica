@@ -53,31 +53,47 @@ class ModeloFormulario
         // $datos = json_decode($valor, true);
         // print_r($datos);
         // foreach ($valor as $fila) {
-            var_dump($valor);
-            print_r($valor);
+        // var_dump($valor);
+        // print_r($valor);
+        $array = json_decode($valor, true);
+
+        foreach ($array as $fila) {
             $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (`id`, `finca`, `aRecorrida`, `cjsEstimadas`, `c5sm`, `r5sm`, `defecto1`, `valdefecto1`, `blsNacional`, `fruta`) 
-        VALUES (NULL, 'md', '400', '21', '33', '56', '108', '10', '216', NULL);");
-            // $stmt->bindParam(":finca", $fila["finca"], PDO::PARAM_STR);
-            // $stmt->bindParam(":aRecorrida", $fila["aRecorrida"], PDO::PARAM_INT);
-            // $stmt->bindParam(":cjsEstimadas", $fila["cjsEstimadas"], PDO::PARAM_INT);
-            // $stmt->bindParam(":c5sm", $fila["c5sm"], PDO::PARAM_INT);
-            // $stmt->bindParam(":r5sm", $fila["r5sm"], PDO::PARAM_INT);
-            // $stmt->bindParam(":defecto1", $fila["defecto1"], PDO::PARAM_STR);
-            // $stmt->bindParam(":valdefecto1", $fila["valdefecto1"], PDO::PARAM_INT);
-            // $stmt->bindParam(":blsNacional", $fila["blsNacional"], PDO::PARAM_INT);
+        VALUES (NULL, :finca,:aRecorrida, :cjsEstimadas, :c5sm, :r5sm, :defecto1, :valdefecto1, :blsNacional, NULL);");
+            $stmt->bindParam(":finca", $fila[0]["finca"], PDO::PARAM_STR);
+            $stmt->bindParam(":aRecorrida", $fila[0]["aRecorrida"], PDO::PARAM_INT);
+            $stmt->bindParam(":cjsEstimadas", $fila[0]["cjsEstimadas"], PDO::PARAM_INT);
+            $stmt->bindParam(":c5sm", $fila[0]["c5sm"], PDO::PARAM_INT);
+            $stmt->bindParam(":r5sm", $fila[0]["r5sm"], PDO::PARAM_INT);
+            $stmt->bindParam(":defecto1", $fila[0]["defecto1"], PDO::PARAM_STR);
+            $stmt->bindParam(":valdefecto1", $fila[0]["valdefecto1"], PDO::PARAM_STR);
+            $stmt->bindParam(":blsNacional", $fila[0]["blsNacional"], PDO::PARAM_STR);
+            
+            
+            
 
             // $stmt->execute();
-            if ($stmt->execute()) {
-                
-                return $valor->{"data"};
-                
-                
-            } else {
-                return "error";
-            }
-            // $stmt->close();
-            $stmt = null;
+        }
         
+        // $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (`id`, `finca`, `aRecorrida`, `cjsEstimadas`, `c5sm`, `r5sm`, `defecto1`, `valdefecto1`, `blsNacional`, `fruta`) 
+        // VALUES (NULL, 'md', '400', '21', '33', '56', '108', '10', '216', NULL);");
+        
+        
+        // foreach ($array as $fila) {
+                if ($stmt->execute()) {
+        
+                    //script para parsear un valor json a un array
+                    return $array;
+
+
+
+
+        } else {
+            return "error";
+        }
+        // $stmt->close();
+        $stmt = null;
+
 
 
 

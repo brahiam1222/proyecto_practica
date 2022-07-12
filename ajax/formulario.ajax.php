@@ -42,7 +42,7 @@ class AjaxFormularios
         $valor = $this->saveTerminacion;
         // $valor = $this->validarTerminacion;
         $enviado = ControladorFormulario::ctrIngresarTerminacion($tabla, $valor);
-        echo json_encode($enviado);
+        echo ($enviado);
         
     }
 
@@ -61,13 +61,13 @@ class AjaxFormularios
 if (isset($_POST["listarTerminacion"])) {
 
     $listar = new AjaxFormularios();
-    $listar->validarTerminacion = json_decode( $_POST["listarTerminacion"]);
+    $listar->validarTerminacion = ["listarTerminacion"];
     $listar->ajaxTerminacion();
 }
 if (isset($_POST["guardarTerminacion"])) {
 
     $guardar = new AjaxFormularios();
-    $guardar->saveTerminacion = $_POST["guardarTerminacion"];
+    $guardar->saveTerminacion = json_encode( $_POST["guardarTerminacion"]);
     $guardar->ajaxGuardarTerminacion();
 }
 
