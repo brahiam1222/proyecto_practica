@@ -54,6 +54,20 @@
                     "Fruta": "",
                     "Cjs": "216",
                     "CjsRechazadas": "5"
+                },
+                {
+                    "fila": "2",
+                    "Cod": "10010",
+                    "Fruta": "",
+                    "Cjs": "54",
+                    "CjsRechazadas": "1"
+                },
+                {
+                    "fila": "3",
+                    "Cod": "33",
+                    "Fruta": "",
+                    "Cjs": "108",
+                    "CjsRechazadas": "0"
                 }
             ],
             "cjsNal": "10",

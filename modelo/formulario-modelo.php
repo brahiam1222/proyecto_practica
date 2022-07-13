@@ -69,31 +69,31 @@ class ModeloFormulario
         //     $stmt->bindParam(":defecto1", $fila[0]["defecto1"], PDO::PARAM_STR);
         //     $stmt->bindParam(":valdefecto1", $fila[0]["valdefecto1"], PDO::PARAM_STR);
         //     $stmt->bindParam(":blsNacional", $fila[0]["blsNacional"], PDO::PARAM_STR);
-            
-            
-            
+
+
+
 
         //     // $stmt->execute();
         // }
-            $arrayimpro = '{"a":1,"b":2,"c":3,"d":4,"e":5}';//pruebas
-         $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (`id`, `finca`, `aRecorrida`, `cjsEstimadas`, `c5sm`,
-          `r5sm`, `defecto1`, `valdefecto1`, `blsNacional`, `fruta`) 
-         VALUES (NULL, '".$valorTerminacion[0][0]["finca"]."', '".$valorTerminacion[0][0]["aRecorrida"]."', '".$valorTerminacion[0][0]["cjsEstimadas"]."',
-          '".$valorTerminacion[0][0]["RacimosCortados"][0]["sem5"]."',
-          '".$valorTerminacion[0][0]["Repiques"][0]["Rsm5"]."', '".$valorTerminacion[0][0]["Defectos"][0]["defecto1"]."',
-           '".$valorTerminacion[0][0]["Defectos"][0]["valDefecto1"]."', '".$valorTerminacion[0][0]["bolNacional"]."',
-           '".$valorTerminacion[0][0]["bolNacional"]."');");
-        
-        
+        // $arrayimpro = '{"a":1,"b":2,"c":3,"d":4,"e":5}'; //pruebas
+        $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla ( `id`, `finca`, `aRecorrida`, `cjsEstimadas`, `c5sm`,
+                                                                    `r5sm`, `defecto1`, `valdefecto1`, `blsNacional`, `fruta`) 
+         VALUES (NULL,  '" . $valorTerminacion[0][0]["finca"] . "',
+                        '" . $valorTerminacion[0][0]["aRecorrida"] . "',
+                        '" . $valorTerminacion[0][0]["cjsEstimadas"] . "',
+                        '" . $valorTerminacion[0][0]["RacimosCortados"][0]["sem5"] . "',
+                        '" . $valorTerminacion[0][0]["Repiques"][0]["Rsm5"] . "',
+                        '" . $valorTerminacion[0][0]["Defectos"][0]["defecto1"] . "',
+                        '" . $valorTerminacion[0][0]["Defectos"][0]["valDefecto1"] . "',
+                        '" . $valorTerminacion[0][0]["bolNacional"] . "',
+                        '" . $valorTerminacion[0][0]["ArrayTabla"][0]["Cod"] . "');");
+
+
         // foreach ($array as $fila) {
-                if ($stmt->execute()) {
-        
-                    //script para parsear un valor json a un array
-                    return $valor;
+        if ($stmt->execute()) {
 
-
-
-
+            //script para parsear un valor json a un array
+            return $valor;
         } else {
             return "error";
         }
