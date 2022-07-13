@@ -46,7 +46,7 @@ class ModeloFormulario
         $stmt = null;
     }
     //ingresar datos en la base de datos
-    static public function mdlIngresarTerminacion($tabla, $valor)
+    static public function mdlIngresarTerminacion($tabla)
     {
 
 
@@ -55,7 +55,8 @@ class ModeloFormulario
         // foreach ($valor as $fila) {
         // var_dump($valor);
         // print_r($valor);
-        $array = json_encode($valor, true);
+        $valor = file_get_contents('../Json/terminacion.json');
+        $valorTerminacion = json_decode($valor, true);
 
         // foreach ($array as $fila) {
         //     $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (`id`, `finca`, `aRecorrida`, `cjsEstimadas`, `c5sm`, `r5sm`, `defecto1`, `valdefecto1`, `blsNacional`, `fruta`) 
@@ -75,8 +76,10 @@ class ModeloFormulario
         //     // $stmt->execute();
         // }
             $arrayimpro = '{"a":1,"b":2,"c":3,"d":4,"e":5}';//pruebas
-         $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (`id`, `finca`, `aRecorrida`, `cjsEstimadas`, `c5sm`, `r5sm`, `defecto1`, `valdefecto1`, `blsNacional`, `fruta`) 
-         VALUES (NULL, '".$valor[0]."', '400', '21', '33', '56', '108', '10', '216', NULL);");
+         $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (`id`, `finca`, `aRecorrida`, `cjsEstimadas`, `c5sm`,
+          `r5sm`, `defecto1`, `valdefecto1`, `blsNacional`, `fruta`) 
+         VALUES (NULL, '".$valorTerminacion[0][0]["finca"]."', '".$valorTerminacion[0][0]["aRecorrida"]."', '".$valorTerminacion[0][0]["cjsEstimadas"]."', '".$valorTerminacion[0][0]["c5sm"]."',
+          '".$valorTerminacion[0][0]["r5sm"]."', '".$valorTerminacion[0][0]["Defectos"]["defecto1"]."', '10', '216', NULL);");
         
         
         // foreach ($array as $fila) {

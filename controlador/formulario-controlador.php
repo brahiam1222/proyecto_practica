@@ -60,12 +60,12 @@ class ControladorFormulario
             return $respuesta;
             echo ($respuesta);
     }
-    static public function ctrIngresarTerminacion($tabla, $valor)
+    static public function ctrIngresarTerminacion($tabla)
     {
             
             
     
-        $respuesta = ModeloFormulario::mdlIngresarTerminacion($tabla, $valor);
+        $respuesta = ModeloFormulario::mdlIngresarTerminacion($tabla);
     
         return $respuesta;
         echo ($respuesta);
