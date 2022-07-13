@@ -78,8 +78,11 @@ class ModeloFormulario
             $arrayimpro = '{"a":1,"b":2,"c":3,"d":4,"e":5}';//pruebas
          $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (`id`, `finca`, `aRecorrida`, `cjsEstimadas`, `c5sm`,
           `r5sm`, `defecto1`, `valdefecto1`, `blsNacional`, `fruta`) 
-         VALUES (NULL, '".$valorTerminacion[0][0]["finca"]."', '".$valorTerminacion[0][0]["aRecorrida"]."', '".$valorTerminacion[0][0]["cjsEstimadas"]."', '".$valorTerminacion[0][0]["c5sm"]."',
-          '".$valorTerminacion[0][0]["r5sm"]."', '".$valorTerminacion[0][0]["Defectos"]["defecto1"]."', '10', '216', NULL);");
+         VALUES (NULL, '".$valorTerminacion[0][0]["finca"]."', '".$valorTerminacion[0][0]["aRecorrida"]."', '".$valorTerminacion[0][0]["cjsEstimadas"]."',
+          '".$valorTerminacion[0][0]["RacimosCortados"][0]["sem5"]."',
+          '".$valorTerminacion[0][0]["Repiques"][0]["Rsm5"]."', '".$valorTerminacion[0][0]["Defectos"][0]["defecto1"]."',
+           '".$valorTerminacion[0][0]["Defectos"][0]["valDefecto1"]."', '".$valorTerminacion[0][0]["bolNacional"]."',
+           '".$valorTerminacion[0][0]["bolNacional"]."');");
         
         
         // foreach ($array as $fila) {
