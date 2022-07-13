@@ -143,23 +143,33 @@ botonEnviar.addEventListener('click', function (e) {
 
 
 
+    // const fs = require('fs');
 
     function guardar() {
-         datos = new FormData();
-         datos.append("guardarTerminacion", datosTerminacion()); //Json Stringfy
-        //  console.log(datos);
-        //  var guardarJSON = JSON.stringify(datosTerminacion());
 
-        __ajax("./ajax/formulario.ajax.php", datos)
-            .done(function (enviado) {
-                //   console.log(enviado[0]);
-                //   console.log(enviado[0]["finca"]);
+
+    //     let jsonData = JSON.stringify(datosTerminacion());
+    //     fs.writeFileSync('./Json/terminacion.json', jsonData);
+    //     console.log('terminacion.json guardado');
+    //     alert('terminacion.json guardado');
+    // }
+
+
+          datos = new FormData();
+          datos.append("guardarTerminacion", JSON.stringify(datosTerminacion())); //Json Stringfy
+         //  console.log(datos);
+         //  var guardarJSON = JSON.stringify(datosTerminacion());
+
+         __ajax("./ajax/formulario.ajax.php", datos)
+             .done(function (enviado) {
+                 //   console.log(enviado[0]);
+                 //   console.log(enviado[0]["finca"]);
                 //    var terminacionList = datosTerminacion();
-                //   console.log(terminacionList);                
-            }
+                 //   console.log(terminacionList);                
+             }
 
             );
-    }
+     }
 
 
 

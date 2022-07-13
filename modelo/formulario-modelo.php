@@ -55,7 +55,7 @@ class ModeloFormulario
         // foreach ($valor as $fila) {
         // var_dump($valor);
         // print_r($valor);
-        $array = json_decode($valor, true);
+        $array = json_encode($valor, true);
 
         // foreach ($array as $fila) {
         //     $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (`id`, `finca`, `aRecorrida`, `cjsEstimadas`, `c5sm`, `r5sm`, `defecto1`, `valdefecto1`, `blsNacional`, `fruta`) 
@@ -76,14 +76,14 @@ class ModeloFormulario
         // }
             $arrayimpro = '{"a":1,"b":2,"c":3,"d":4,"e":5}';//pruebas
          $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (`id`, `finca`, `aRecorrida`, `cjsEstimadas`, `c5sm`, `r5sm`, `defecto1`, `valdefecto1`, `blsNacional`, `fruta`) 
-         VALUES (NULL, '".$valor."', '400', '21', '33', '56', '108', '10', '216', NULL);");
+         VALUES (NULL, '".$valor[0]."', '400', '21', '33', '56', '108', '10', '216', NULL);");
         
         
         // foreach ($array as $fila) {
                 if ($stmt->execute()) {
         
                     //script para parsear un valor json a un array
-                    return $array;
+                    return $valor;
 
 
 
