@@ -37,7 +37,8 @@ botonEnviar.addEventListener('click', function (e) {
         };
         ArrayTabla.push(fila);
     }
-    var finca = document.querySelector('#fincas').value,
+    var fecha = document.getElementById('fecha').value,
+        finca = document.querySelector('#fincas').value,
         aRecorrida = document.getElementById('area').value,
         cjsEstimadas = document.getElementById('cajas').value,
         pEmpaca = document.getElementById('empaca').value,
@@ -80,6 +81,7 @@ botonEnviar.addEventListener('click', function (e) {
     function datosTerminacion() {
         var data = [];
         data.push({
+            "fecha": fecha,
             "finca": finca,
             "aRecorrida": aRecorrida,
             "cjsEstimadas": cjsEstimadas,
@@ -162,7 +164,7 @@ botonEnviar.addEventListener('click', function (e) {
 
          __ajax("./ajax/formulario.ajax.php", datos)
              .done(function (enviado) {
-                 //   console.log(enviado[0]);
+                   console.log( enviado.length);     //Json Stringfy
                  //   console.log(enviado[0]["finca"]);
                 //    var terminacionList = datosTerminacion();
                  //   console.log(terminacionList);                

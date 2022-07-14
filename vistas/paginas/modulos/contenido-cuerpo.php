@@ -217,6 +217,30 @@
             </form>
           </div> -->
           <div class="col-md-7 col-lg-8">
+
+
+            <!-- dato date -->
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h5 class="card-title">Fecha</h5>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="exampleFormControlSelect1">     Seleccione el día del embarque</label>
+                          <input type="date" class="form-control" id="fecha">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
             <!-- Select de fincas -->
             <label for="fincas">Fincas</label>
             <select class="form-control mb-3" id="fincas">

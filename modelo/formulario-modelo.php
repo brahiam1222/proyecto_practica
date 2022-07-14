@@ -76,29 +76,85 @@ class ModeloFormulario
         //     // $stmt->execute();
         // }
         // $arrayimpro = '{"a":1,"b":2,"c":3,"d":4,"e":5}'; //pruebas
-        $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla ( `id`, `finca`, `aRecorrida`, `cjsEstimadas`, `c5sm`,
-                                                                    `r5sm`, `defecto1`, `valdefecto1`, `blsNacional`, `fruta`) 
-         VALUES (NULL,  '" . $valorTerminacion[0][0]["finca"] . "',
+        
+        $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla ( `id`, `fecha`, `finca`, `aRecorrida`, `cjsEstimadas`, `c5sm`, `r5sm`, `defecto1`, `valdefecto1`, `blsNacional`, `fruta`)
+
+         VALUES (NULL,  '" . $valorTerminacion[0][0]["fecha"] . "',
+                        '" . $valorTerminacion[0][0]["finca"] . "',
                         '" . $valorTerminacion[0][0]["aRecorrida"] . "',
                         '" . $valorTerminacion[0][0]["cjsEstimadas"] . "',
                         '" . $valorTerminacion[0][0]["RacimosCortados"][0]["sem5"] . "',
                         '" . $valorTerminacion[0][0]["Repiques"][0]["Rsm5"] . "',
                         '" . $valorTerminacion[0][0]["Defectos"][0]["defecto1"] . "',
                         '" . $valorTerminacion[0][0]["Defectos"][0]["valDefecto1"] . "',
-                        '" . $valorTerminacion[0][0]["bolNacional"] . "',
-                        '" . $valorTerminacion[0][0]["ArrayTabla"][0]["Cod"] . "');");
+                        '" . $valorTerminacion[0][0]["bolNacional"] . "',                        
+                        '" . $valorTerminacion[0][0]["ArrayTabla"][0]["Cod"] . "'
+                    
+                    
+                    );");
 
+
+
+
+
+
+
+
+
+        // // $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla ( `id`, `finca`, `aRecorrida`, `cjsEstimadas`, `c5sm`, `r5sm`, `defecto1`, `valdefecto1`, `blsNacional`, `fruta`)
+        // //  VALUES (NULL,  '" . $valorTerminacion[0][0]["finca"] . "',
+        // //                 '" . $valorTerminacion[0][0]["aRecorrida"] . "',
+        // //                 '" . $valorTerminacion[0][0]["cjsEstimadas"] . "',
+        // //                 '" . $valorTerminacion[0][0]["RacimosCortados"][0]["sem5"] . "',
+        // //                 '" . $valorTerminacion[0][0]["Repiques"][0]["Rsm5"] . "',
+        // //                 '" . $valorTerminacion[0][0]["Defectos"][0]["defecto1"] . "',
+        // //                 '" . $valorTerminacion[0][0]["Defectos"][0]["valDefecto1"] . "',
+        // //                 '" . $valorTerminacion[0][0]["bolNacional"] . "',
+        // //                 '" . $valorTerminacion[0][0]["ArrayTabla"][0]["Cod"] . "'
+                        
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+        // //             );");
 
         // foreach ($array as $fila) {
         if ($stmt->execute()) {
+            return $valorTerminacion;
 
-            //script para parsear un valor json a un array
-            return $valor;
+            
         } else {
             return "error";
         }
         // $stmt->close();
         $stmt = null;
+
+        // $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla ( `id`, `finca`, `aRecorrida`, `cjsEstimadas`, `c5sm`,
+        //                                                             `r5sm`, `defecto1`, `valdefecto1`, `blsNacional`, `fruta`) 
+        //  VALUES (NULL,  '" . $valorTerminacion[0][0]["finca"] . "',
+        //                 '" . $valorTerminacion[0][0]["aRecorrida"] . "',
+        //                 '" . $valorTerminacion[0][0]["cjsEstimadas"] . "',
+        //                 '" . $valorTerminacion[0][0]["RacimosCortados"][0]["sem5"] . "',
+        //                 '" . $valorTerminacion[0][0]["Repiques"][0]["Rsm5"] . "',
+        //                 '" . $valorTerminacion[0][0]["Defectos"][0]["defecto1"] . "',
+        //                 '" . $valorTerminacion[0][0]["Defectos"][0]["valDefecto1"] . "',
+        //                 '" . $valorTerminacion[0][0]["bolNacional"] . "',
+        //                 '" . $valorTerminacion[0][0]["ArrayTabla"][0]["Cod"] . "');");
+
+
+        // // foreach ($array as $fila) {
+        // if ($stmt->execute()) {
+        //     return $valorTerminacion;
+
+            
+        // } else {
+        //     return "error";
+        // }
+        // // $stmt->close();
+        // $stmt = null;
 
 
 

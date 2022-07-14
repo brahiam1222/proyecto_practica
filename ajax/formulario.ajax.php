@@ -50,7 +50,7 @@ class AjaxFormularios
 
         // $valor = $this->validarTerminacion;
         $enviado = ControladorFormulario::ctrIngresarTerminacion($tabla);
-        echo ($enviado);
+        echo json_encode($enviado);
         
     }
 
