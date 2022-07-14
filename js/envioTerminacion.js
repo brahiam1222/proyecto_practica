@@ -164,6 +164,8 @@ botonEnviar.addEventListener('click', function (e) {
 
          __ajax("./ajax/formulario.ajax.php", datos)
              .done(function (enviado) {
+
+                    
                    console.log( enviado.length);     //Json Stringfy
                  //   console.log(enviado[0]["finca"]);
                 //    var terminacionList = datosTerminacion();

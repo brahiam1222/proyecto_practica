@@ -123,6 +123,14 @@ class ModeloFormulario
 
         // foreach ($array as $fila) {
         if ($stmt->execute()) {
+            $fichero = '../Json/terminacion.json';
+            $actualJson = file_get_contents($fichero);
+            // $actual = json_decode($actualJson,true);
+            // $valorDecode = json_decode($valor,true);
+            // $actual[] = $valorDecode;
+            $actualJson = json_encode(null);
+    
+            file_put_contents($fichero, $actualJson);
             return $valorTerminacion;
 
             
