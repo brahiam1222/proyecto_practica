@@ -40,13 +40,19 @@ class AjaxFormularios
         $tabla = "terminacion";
         $valor = $this->saveTerminacion;
         $fichero = '../Json/terminacion.json';
+        $ficheroBD = '../Json/bdTerminacionJson.json';
         $actualJson = file_get_contents($fichero);
+        $actualJsonBD = file_get_contents($ficheroBD);
         $actual = json_decode($actualJson,true);
+        $actualBD = json_decode($actualJsonBD,true);
         $valorDecode = json_decode($valor,true);
         $actual[] = $valorDecode;
+        $actualBD[] = $valorDecode;
         $actualJson = json_encode($actual);
+        $actualJsonBD = json_encode($actualBD);
 
         file_put_contents($fichero, $actualJson);
+        file_put_contents($ficheroBD, $actualJsonBD);
 
         // $valor = $this->validarTerminacion;
         $enviado = ControladorFormulario::ctrIngresarTerminacion($tabla);
