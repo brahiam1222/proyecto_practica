@@ -150,77 +150,77 @@ botonEnviar.addEventListener('click', function (e) {
     function guardar() {
 
 
-    //     let jsonData = JSON.stringify(datosTerminacion());
-    //     fs.writeFileSync('./Json/terminacion.json', jsonData);
-    //     console.log('terminacion.json guardado');
-    //     alert('terminacion.json guardado');
-    // }
-
-
-          datos = new FormData();
-          datos.append("guardarTerminacion", JSON.stringify(datosTerminacion())); //Json Stringfy
-         //  console.log(datos);
-         //  var guardarJSON = JSON.stringify(datosTerminacion());
-
-         __ajax("./ajax/formulario.ajax.php", datos)
-             .done(function (enviado) {
-
-                    
-                   console.log( enviado.length);     //Json Stringfy
-                 //   console.log(enviado[0]["finca"]);
-                //    var terminacionList = datosTerminacion();
-                 //   console.log(terminacionList);                
-             }
-
-            );
-     }
-
-
-
-        // function guardar() {
-            
-            
-        //     datos = new FormData();
-        //     datos.append("guardarTerminacion", "");
-        //     //  console.log(variableEnvio);
-        //     // var json = JSON.stringify(datosTerminacion());
-        //     __ajax("./ajax/formulario.ajax.php", datos)
-        //     .done(function(enviado){
-        //         console.log(enviado);
-        //         var enviado = JSON.parse(enviado);
-               
-
-            
-        //       });
-
+        //     let jsonData = JSON.stringify(datosTerminacion());
+        //     fs.writeFileSync('./Json/terminacion.json', jsonData);
+        //     console.log('terminacion.json guardado');
+        //     alert('terminacion.json guardado');
         // }
 
 
-        function listar() {
-            datos = new FormData();
-            datos.append("listarTerminacion", "");
-            // console.log(datos);
+        datos = new FormData();
+        datos.append("guardarTerminacion", JSON.stringify(datosTerminacion())); //Json Stringfy
+        //  console.log(datos);
+        //  var guardarJSON = JSON.stringify(datosTerminacion());
 
-            __ajax("./ajax/formulario.ajax.php", datos)
-                .done(function (enviado) {
-                    console.log(enviado);
-                    var terminacionList = JSON.stringify(enviado);
-                    console.log(terminacionList);
-                }
+        __ajax("./ajax/formulario.ajax.php", datos)
+            .done(function (enviado) {
 
-                );
-        }
 
-        function __ajax(url, datos) {
-            var ajax = $.ajax({
-                url: url,
-                method: "POST",
-                data: datos,
-                cache: false,
-                contentType: false,
-                processData: false,
-                dataType: "json"
-            });
-            return ajax;
-        }
-    });
+                console.log(enviado.length);     //Json Stringfy
+                //   console.log(enviado[0]["finca"]);
+                //    var terminacionList = datosTerminacion();
+                //   console.log(terminacionList);                
+            }
+
+            );
+    }
+
+
+
+    // function guardar() {
+
+
+    //     datos = new FormData();
+    //     datos.append("guardarTerminacion", "");
+    //     //  console.log(variableEnvio);
+    //     // var json = JSON.stringify(datosTerminacion());
+    //     __ajax("./ajax/formulario.ajax.php", datos)
+    //     .done(function(enviado){
+    //         console.log(enviado);
+    //         var enviado = JSON.parse(enviado);
+
+
+
+    //       });
+
+    // }
+
+
+    function listar() {
+        datos = new FormData();
+        datos.append("listarTerminacion", "");
+        // console.log(datos);
+
+        __ajax("./ajax/formulario.ajax.php", datos)
+            .done(function (enviado) {
+                console.log(enviado);
+                var terminacionList = JSON.stringify(enviado);
+                console.log(terminacionList);
+            }
+
+            );
+    }
+
+    function __ajax(url, datos) {
+        var ajax = $.ajax({
+            url: url,
+            method: "POST",
+            data: datos,
+            cache: false,
+            contentType: false,
+            processData: false,
+            dataType: "json"
+        });
+        return ajax;
+    }
+});

@@ -7,8 +7,8 @@ require_once "../modelo/formulario-modelo.php";
 
 
 
-    // $prueba = $_POST["listarTerminacion"];
-    // var_dump($prueba);
+// $prueba = $_POST["listarTerminacion"];
+// var_dump($prueba);
 
 
 
@@ -24,7 +24,7 @@ class AjaxFormularios
     public $validarEmail;
     public $validarTerminacion;
     public $saveTerminacion;
-    
+
 
     public function ajaxValidarEmail()
     {
@@ -43,9 +43,9 @@ class AjaxFormularios
         $ficheroBD = '../Json/bdTerminacionJson.json';
         $actualJson = file_get_contents($fichero);
         $actualJsonBD = file_get_contents($ficheroBD);
-        $actual = json_decode($actualJson,true);
-        $actualBD = json_decode($actualJsonBD,true);
-        $valorDecode = json_decode($valor,true);
+        $actual = json_decode($actualJson, true);
+        $actualBD = json_decode($actualJsonBD, true);
+        $valorDecode = json_decode($valor, true);
         $actual[] = $valorDecode;
         $actualBD[] = $valorDecode;
         $actualJson = json_encode($actual);
@@ -57,7 +57,6 @@ class AjaxFormularios
         // $valor = $this->validarTerminacion;
         $enviado = ControladorFormulario::ctrIngresarTerminacion($tabla);
         echo json_encode($enviado);
-        
     }
 
     //recibir datos json
@@ -67,7 +66,6 @@ class AjaxFormularios
         // $valor = $this->validarTerminacion;
         $enviado = ControladorFormulario::ctrMostrarTerminacion($tabla);
         echo json_encode($enviado);
-        
     }
 }
 
