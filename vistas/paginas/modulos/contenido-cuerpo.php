@@ -244,13 +244,20 @@
               <!-- Select de fincas -->
               <label for="fincas">Fincas</label>
               <select class="form-control mb-3" id="fincas">
-                <option value="MN">Manantiales</option>
+
+                <?php $datosTerminacion = ControladorFormulario::ctrMostrarTerminacion("fincas")    ?>
+                <?php foreach ($datosTerminacion as $selectFincas) { ?>
+                  <option value="<?php echo $selectFincas["acronimo"];  ?>"><?php echo $selectFincas["nombre"];  ?></option>
+                <?php } ?>
+
+              </select>
+
+              <!-- <option value="MN">Manantiales</option>
                 <option value="MD">Madelandia</option>
                 <option value="SH">Santa Helena</option>
                 <option value="CO">Corrales</option>
                 <option value="GA">Galilea</option>
-                <option value="CU">Curazao</option>
-              </select>
+                <option value="CU">Curazao</option> -->
               <form class="form-inline" novalidate="">
                 <div class="row g-3">
                   <div class="col-sm-2 form-group">
