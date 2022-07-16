@@ -290,11 +290,11 @@
                     <div class="row">
 
                       <div class="col-sm-4 form-label">
-                        <a for="racimosCortados" class="form-label" onclick="emergentes('RacimosCortados')" ondblclick="sinemergentes('RacimosCortados')">Racimos Cortados</a>
+                        <a for="racimosCortados" class="form-label" onclick="emergentes('RacimosCortados')">Racimos Cortados</a>
 
 
                       </div>
-                      <div id="RacimosCortados" class="col-sm-2 form-group venEmergente">
+                      <div id="RacimosCortados" onclick="sinemergentes('RacimosCortados')" class="col-sm-2 form-group venEmergente">
                         <div id="Ventana">
 
 
