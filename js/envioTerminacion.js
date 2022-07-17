@@ -1,4 +1,5 @@
 const botonEnviar = document.getElementById('enviarterminacion');
+const msg = document.getElementById('mensaje');
 
 botonEnviar.addEventListener('click', function (e) {
 
@@ -164,7 +165,12 @@ botonEnviar.addEventListener('click', function (e) {
 
         __ajax("./ajax/formulario.ajax.php", datos)
             .done(function (enviado) {
-
+                msg.innerHTML = `<div class="alert alert-success" role="alert">
+                             Terminacion subida con éxito!
+                           </div>`;
+                // msg.innerHTML = `<div class="alert alert-danger" role="alert">
+                // Error al enviar el mensaje!
+                // </div>`;
 
                 console.log(enviado.length);     //Json Stringfy
                 //   console.log(enviado[0]["finca"]);

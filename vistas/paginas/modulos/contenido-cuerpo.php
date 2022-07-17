@@ -1,4 +1,18 @@
 <body>
+<!-- 
+
+if (!isset($_SESSION["validar"])) {
+
+  echo '<script> window.location = "index.php";</script>';
+  return;
+} else {
+  if ($_SESSION["validar"] != "ok") {
+    echo '<script> window.location = "plantilla.php";</script>';
+    return;
+  }
+}
+
+-->
 
   <div class="container-fluid">
     <div class="row">
@@ -139,7 +153,7 @@
           </div>
         </div>
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">Dashboard</h1>
+          <h1 class="h2">Registro de Terminacion</h1>
           <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group me-2">
               <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
@@ -237,20 +251,20 @@
                     </div>
                   </div>
                 </div>
+
+
+
+                <!-- Select de fincas -->
+                <label for="fincas">Fincas</label>
+                <select class="form-control mb-3" id="fincas">
+
+                  <?php $datosTerminacion = ControladorFormulario::ctrMostrarTerminacion("fincas")    ?>
+                  <?php foreach ($datosTerminacion as $selectFincas) { ?>
+                    <option value="<?php echo $selectFincas["acronimo"];  ?>"><?php echo $selectFincas["nombre"];  ?></option>
+                  <?php } ?>
+
+                </select>
               </div>
-
-
-
-              <!-- Select de fincas -->
-              <label for="fincas">Fincas</label>
-              <select class="form-control mb-3" id="fincas">
-
-                <?php $datosTerminacion = ControladorFormulario::ctrMostrarTerminacion("fincas")    ?>
-                <?php foreach ($datosTerminacion as $selectFincas) { ?>
-                  <option value="<?php echo $selectFincas["acronimo"];  ?>"><?php echo $selectFincas["nombre"];  ?></option>
-                <?php } ?>
-
-              </select>
 
               <!-- <option value="MN">Manantiales</option>
                 <option value="MD">Madelandia</option>
@@ -286,19 +300,19 @@
                     <input type="text" class="form-control" id="mano" placeholder="" value="" required="">
 
                   </div>
-                  <div class="">
-                    <div class="row">
+                  
+                    <div class="separar">
 
                       <div class="col-sm-4 form-label">
-                        <a for="racimosCortados" class="form-label" onclick="emergentes('RacimosCortados')">Racimos Cortados</a>
+                        <a for="racimosCortados" id="enlace" class="form-label" onclick="emergentes('RacimosCortados')">Racimos Cortados</a>
 
 
                       </div>
-                      <div id="RacimosCortados" onclick="sinemergentes('RacimosCortados')" class="col-sm-2 form-group venEmergente">
+                      <div id="RacimosCortados" class="col-sm-2 form-group venEmergente">
                         <div id="Ventana">
 
 
-                          <button id="btnClose" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <button id="btnClose" type="button" onclick="sinemergentes('RacimosCortados')" class="button" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                           </button>
 
@@ -316,9 +330,36 @@
 
                       </div>
                     </div>
+                    <div class="row">
 
-                  </div>
-                  <div class="">
+                      <div class="col-sm-4 form-label">
+                        <a for="RacimosRepicados" id="enlace" class="form-label" onclick="emergentes('RacimosRepicados')">Racimos Repicados</a>
+
+
+                      </div>
+                      <div id="RacimosRepicados" class="col-sm-2 form-group venEmergente">
+                        <div id="Ventana">
+
+
+                          <button id="btnClose" type="button" onclick="sinemergentes('RacimosRepicados')" class="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+
+                          <input type="text" class="form-control repicados" id="Rsm5" placeholder="Corte 5 semanas" value="" required="">
+                          <input type="text" class="form-control repicados" id="Rsm6" placeholder="Corte 6 semanas" value="" required="">
+                          <input type="text" class="form-control repicados" id="Rsm7" placeholder="Corte 7 semanas" value="" required="">
+                          <input type="text" class="form-control repicados" id="Rsm8" placeholder="Corte 8 semanas" value="" required="">
+                          <input type="text" class="form-control repicados" id="Rsm9" placeholder="Corte 9 semanas" value="" required="">
+                          <input type="text" class="form-control repicados" id="Rsm10" placeholder="Corte 10 semanas" value="" required="">
+                          <input type="text" class="form-control repicados" id="Rsm11" placeholder="Corte 11 semanas" value="" required="">
+                          <input type="text" class="form-control repicados" id="Rsm12" placeholder="Corte 12 semanas" value="" required="">
+                          <input type="text" class="form-control repicados" id="Rsm13" placeholder="Corte 13 semanas" value="" required="">
+                        </div>
+
+                      </div>
+                    </div>
+
+                  <!-- <div class="">
                     <div class="row">
 
                       <div class="col-sm-4 form-label">
@@ -342,7 +383,7 @@
                       </div>
                     </div>
 
-                  </div>
+                  </div> -->
                   <div class="">
 
 
@@ -408,36 +449,42 @@
                     <div class="row">
 
                       <div class="col-sm-4 form-label">
-                        <a for="FrutaExportada" class="form-label" onclick="emergentes('FrutaExportada')" ondblclick="sinemergentes('FrutaExportada')">Fruta Exportada</a>
+                        <a for="FrutaExportada" id="enlace" class="form-label" onclick="emergentes('FrutaExportada')">Fruta Exportada</a>
 
 
                       </div>
                       <div id="FrutaExportada" class="col-sm-4 form-group venEmergente">
+                        <div id="Ventana">
+                          <button id="btnClose" type="button" onclick="sinemergentes('FrutaExportada')" class="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
 
-                        <!-- tabla de 4 columnas -->
-                        <table id="tabla" class="table table-bordered">
-                          <thead>
-                            <tr>
-                              <th>#</th>
-                              <th>Codigo</th>
-                              <th>Fruta</th>
-                              <th>Cantidad</th>
-                              <th>Rechazo</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="1" disabled></td>
-                              <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="" required></td>
-                              <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="" disabled></td>
-                              <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="" required=""></td>
-                              <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="" required=""></td>
-                            </tr>
 
-                        </table>
+                          <!-- tabla de 4 columnas -->
+                          <table id="tabla" class="table table-bordered">
+                            <thead>
+                              <tr>
+                                <th>#</th>
+                                <th>Codigo</th>
+                                <th>Fruta</th>
+                                <th>Cantidad</th>
+                                <th>Rechazo</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="1" disabled></td>
+                                <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="" required></td>
+                                <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="" disabled></td>
+                                <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="" required=""></td>
+                                <td><input type="text" class="form-control datosTabla" id="" placeholder="" value="" required=""></td>
+                              </tr>
 
-                        <input type="button" value="+" onclick="insertaFila()">
-
+                          </table>
+                          
+                          <input type="button" class="button" id="button-eliminar" value="-" onclick="eliminaFila()">
+                          <input type="button" class="button" id="button-agregar" value="+" onclick="insertaFila()">
+                        </div>
 
                       </div>
                     </div>
@@ -477,7 +524,7 @@
 
 
                   <hr class="my-4">
-
+                  <div id="mensaje"></div>
                   <button class="w-50 btn btn-primary btn-lg" id="enviarterminacion" type="button">Registrar Terminacion</button>
               </form>
             </div>

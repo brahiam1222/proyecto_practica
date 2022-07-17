@@ -113,3 +113,11 @@ function insertaFila() {
 
 }
 
+function eliminaFila() { 
+    let table = document.getElementById("tabla");
+    let rowCount = table.rows.length;
+    if (rowCount > 2) {
+        table.deleteRow(rowCount - 1);
+    }
+}
+

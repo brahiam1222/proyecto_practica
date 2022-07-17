@@ -79,7 +79,7 @@ class ModeloFormulario
 
         $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla ( `id`, `fecha`, `finca`, `arecorrida`, `cjsestimadas`, `pempaca`, 
                                                                     `pcampo`, `cmano`,  `racimoscortados`, `racimosrepicados`, `defectos`,
-                                                                    `cjsNal`, `blsNacional`, `klsNacional`, `klsPersonal`, `klsFrPiso`, `fruta`)
+                                                                    `cjsnal`, `blsnacional`, `klsnacional`, `klspersonal`, `klsfrpiso`, `fruta`)
 
          VALUES (NULL,  '" . $valorTerminacion[0][0]["fecha"] . "',
                         '" . $valorTerminacion[0][0]["finca"] . "',
